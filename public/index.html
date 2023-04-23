@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="main.min.css" />
+    <link rel="stylesheet" href="dist/main.min.css" />
     <title>
       PR Agency in Dubai, UAE | Public Relations Agency | PR Company
     </title>
@@ -25,11 +25,13 @@
           >
             BRAND BUILDERS & STORY TELLERS
           </h1>
-          <p class="home-banner__description fs-24 text-center stretch-up">
-            <span>
-              PUBLIC RELATIONS - BRAND BUILDING - LOYALTY & PARTNERSHIPS
-            </span>
-          </p>
+          <div class="home-banner__description fs-24 text-center fade-up">
+            <ul>
+              <li>PUBLIC RELATIONS</li>
+              <li>BRAND BUILDING</li>
+              <li>LOYALTY & PARTNERSHIPS</li>
+            </ul>
+          </div>
           <div class="btn-wrap banner-btn fade-up">
             <button class="btn btn-primary">GET IN TOUCH</button>
           </div>
@@ -380,7 +382,7 @@
         aria-labelledby="enquiryModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content">
             <button
               type="button"
@@ -444,6 +446,6 @@
         </div>
       </div>
     </main>
-    <script src="bundle.js"></script>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>

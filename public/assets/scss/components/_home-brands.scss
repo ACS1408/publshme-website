@@ -18,6 +18,7 @@
         padding: size(24);
         border-radius: 8px;
         width: auto;
+        user-select: none;
         @include noTouchDevices {
             transition: 0.43s ease-in-out transform, 0.43s ease-in-out box-shadow;
             &:hover {

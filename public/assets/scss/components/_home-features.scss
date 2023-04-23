@@ -57,14 +57,22 @@
             }
             &__description {
                 @include lineHeight(20, 40);
+                margin-bottom: 0;
             }
         }
         .swiper-slide {
             width: var(--feature-slide-width);
             &:not(:nth-child(3n)) {
                 .feature-card__title {
-                    // margin-bottom: size(143);
                     margin-bottom: size(100);
+                }
+            }
+            &:not(:nth-child(3n)) {
+                .feature-card {
+                    min-height: 520px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                 }
             }
             &:nth-child(3n) {

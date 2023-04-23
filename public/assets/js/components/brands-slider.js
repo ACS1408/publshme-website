@@ -1,5 +1,6 @@
 import Swiper, { Autoplay } from "swiper";
 import "swiper/css";
+import "swiper/css/autoplay";
 
 Swiper.use([Autoplay]);
 
@@ -10,10 +11,9 @@ const brandsSlider = () => {
     autoplay: {
       delay: 1,
       disableOnInteraction: false,
-      reverseDirection: true,
     },
     allowTouchMove: false,
-    speed: 10000,
+    speed: 5000,
     loop: true,
   });
   var brandsSliderBottom = new Swiper(".home-brands__slider.brands-bottom", {
@@ -22,10 +22,10 @@ const brandsSlider = () => {
     autoplay: {
       delay: 1,
       disableOnInteraction: false,
-      reverseDirection: false,
+      reverseDirection: true,
     },
     allowTouchMove: false,
-    speed: 10000,
+    speed: 5000,
     loop: true,
   });
   return { brandsSliderTop, brandsSliderBottom };

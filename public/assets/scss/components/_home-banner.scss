@@ -35,6 +35,29 @@
             margin-bottom: size(40);
             @include lineHeight(24, 48);
         }
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: size(50);
+            li {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    background-color: $primary-color;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: -10px;
+                    transform: translate(-100%, -50%);
+                }
+            }
+        }
     }
     .btn-wrap {
         > .btn {

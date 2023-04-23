@@ -6,7 +6,9 @@ import publshSlider from "./components/publsh-slider";
 import splitText from "./components/splitText";
 import { Modal } from "bootstrap";
 
-const { brandsSliderTop, brandsSliderBottom } = brandsSlider();
+document.addEventListener("DOMContentLoaded", () => {
+  const { brandsSliderTop, brandsSliderBottom } = brandsSlider();
+});
 const { featureSlider } = publshSlider();
 
 const split = splitText();
@@ -28,16 +30,6 @@ function raf(time) {
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
-
-// lenis.on("scroll", (e) => {
-//   if (e.direction === -1) {
-//     brandsSliderTop.params.autoplay.reverseDirection = false;
-//     brandsSliderBottom.params.autoplay.reverseDirection = true;
-//   } else {
-//     brandsSliderTop.params.autoplay.reverseDirection = true;
-//     brandsSliderBottom.params.autoplay.reverseDirection = false;
-//   }
-// });
 
 document
   .querySelectorAll(".enquiry-modal__form input, .enquiry-modal__form textarea")
@@ -63,6 +55,14 @@ document.querySelector(".btn-enquiry").addEventListener("click", () => {
   enquiryModal.toggle();
 });
 
+const enquiryModalSelector = document.getElementById("enquiryModal");
+enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
+  lenis.stop();
+});
+enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
+  lenis.start();
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.ticker.fps(60);
@@ -73,12 +73,11 @@ gsap.utils.toArray(".home-banner__title .wordInner").forEach((word, i) => {
     ease: "Sine.easeOut",
     scaleY: 1,
     onComplete: () => {
-      gsap.to(".home-banner__description > span", {
+      gsap.to(".home-banner__description > *", {
         y: 0,
         duration: 0.4,
         ease: "Sine.easeOut",
         opacity: 1,
-        scaleY: 1,
         delay: 0.8,
         onComplete: () => {
           gsap.to(".banner-btn > *", {
@@ -120,7 +119,6 @@ gsap.to(".btn-enquiry", {
 window.addEventListener("load", () => {
   setTimeout(() => {
     const enquiryTooltip = document.querySelector(".enquiry-tooltip");
-    console.log(enquiryTooltip);
     enquiryTooltip.classList.add("tooltip-hide");
   }, 5000);
 });

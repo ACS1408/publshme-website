@@ -14,7 +14,7 @@
         will-change: transform, opacity;
     }
     .video-wrap {
-        transform: translate(-50%, -32%) scale(0.5);
+        transform: translate(-50%, -30%) scale(0.5);
         clip-path: circle(50% at 50% 50%);
         will-change: clip-path;
         transition: 0.1s ease-in-out clip-path, 1.4s ease-in-out transform;

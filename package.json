@@ -22,6 +22,6 @@
     "bootstrap": "^5.0.1",
     "gsap": "^3.11.5",
     "scrolltrigger": "^1.0.1",
-    "swiper": "^9.2.4"
+    "swiper": "^8.4.7"
   }
 }
