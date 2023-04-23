@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/main.min.css" />
+    <title>
+      PR Agency in Dubai, UAE | Public Relations Agency | PR Company
+    </title>
+  </head>
+
+  <body>
+    <main>
+      <!-- Section: Home Banner -->
+      <section class="home-banner">
+        <div class="container">
+          <h1
+            class="home-banner__title h1 text-center text-uppercase"
+            data-word-split
+          >
+            BRAND BUILDERS & STORY TELLERS
+          </h1>
+          <p class="home-banner__description fs-24 text-center stretch-up">
+            <span>
+              PUBLIC RELATIONS - BRAND BUILDING - LOYALTY & PARTNERSHIPS
+            </span>
+          </p>
+          <div class="btn-wrap banner-btn fade-up">
+            <button class="btn btn-primary">GET IN TOUCH</button>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Home Video -->
+      <section class="home-video">
+        <!-- <div class="container"> -->
+        <h2 class="about-title">WH<span id="pos-o-letter">O</span> WE ARE</h2>
+        <div class="video-outer-wrap">
+          <div class="video-wrap">
+            <div class="home-video__frame">
+              <video
+                src="assets/videos/home-video.mp4"
+                poster="assets/images/home-video-poster.jpg"
+              ></video>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </section>
+      <!-- Section: Home About -->
+      <section class="home-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div id="home-about__title"></div>
+            </div>
+            <div class="col-lg-6">
+              <p class="home-about__description fw-light fs-20">
+                Publsh is a leading PR and marketing agency based in Dubai,
+                dedicated to helping brands achieve their business goals through
+                impactful communication strategies. With our expertise in press
+                release distribution, media outreach, influencer marketing, and
+                loyalty and partnership programs, we offer a full range of
+                services to help brands enhance their visibility, credibility,
+                and engagement with their target audience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Home Brands -->
+      <section class="home-brands">
+        <div class="container">
+          <div class="home-brands__slider brands-top swiper">
+            <div class="swiper-wrapper">
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/forbes.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/vogue.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/the-national.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/arab-news.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/cnn.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/business-insider.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/al-bayan.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/forbes.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/forbes.svg" alt="" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="home-brands__slider brands-bottom swiper">
+            <div class="swiper-wrapper">
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/bloomberg.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/vogue.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/wsj.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/mashable.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/conde-nast.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/saudi-gazette.svg" alt="" />
+                </figure>
+              </div>
+              <div class="brand-slide swiper-slide">
+                <figure class="home-brands__slider--image">
+                  <img src="assets/images/brands/the-independent.svg" alt="" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Home Services -->
+      <section class="home-services">
+        <div class="container">
+          <div class="home-services__cards row">
+            <div class="col-lg-6">
+              <div
+                class="service-card"
+                style="
+                  --service-card-bg: #307470;
+                  --service-card-text: #d1f386;
+                  --service-title-width: 90%;
+                "
+              >
+                <div class="card-wrap">
+                  <h2 class="service-card__title h2 fw-black">
+                    Press release distribution with guaranteed coverage in
+                    tier-1 media publications
+                  </h2>
+                  <p class="service-card__description fs-20 fw-light mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Massa urna justo
+                    enim tellus feugiat nullam. Vel molestie orci dui ac dolor
+                    eget elementum iaculis. Lorem eleifend sed.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="service-card columns-2"
+                style="
+                  --service-card-bg: #d1f386;
+                  --service-card-text: #0e0f0c;
+                  --service-title-width: 55%;
+                  --service-title-align: flex-end;
+                "
+              >
+                <div class="card-wrap">
+                  <h2 class="service-card__title h2 fw-black">
+                    Loyalty & Partnerships
+                  </h2>
+                  <p class="service-card__description fs-20 fw-light mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Massa urna justo
+                    enim tellus feugiat nullam. Vel molestie.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div
+                class="service-card columns-2"
+                style="
+                  --service-card-bg: #ffc18e;
+                  --service-card-text: #422b72;
+                  --service-title-width: 37%;
+                  --service-title-align: flex-start;
+                "
+              >
+                <div class="card-wrap">
+                  <h2 class="service-card__title h2 fw-black">
+                    Hire a PR team
+                  </h2>
+                  <p class="service-card__description fs-20 fw-light mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Massa urna justo
+                    enim tellus feugiat nullam. Vel molestie orci dui ac dolor
+                    eget elementum iaculis. Lorem eleifend sed.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="service-card"
+                style="
+                  --service-card-bg: #ecc5fb;
+                  --service-card-text: #810955;
+                  --service-title-width: 50%;
+                "
+              >
+                <div class="card-wrap">
+                  <h2 class="service-card__title h2 fw-black">
+                    Guaranteed coverage in tier-1 publications
+                  </h2>
+                  <p class="service-card__description fs-20 fw-light mb-0">
+                    Lorem ipsum dolor sit amet consectetur. Massa urna justo
+                    enim tellus feugiat nullam. Vel molestie orci dui ac dolor
+                    eget elementum iaculis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Home Features -->
+      <section class="home-features">
+        <div class="section-inner">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <h2
+                  class="home-features__title h1 fw-extrabold"
+                  data-word-split
+                >
+                  WHY PUBLSH?
+                </h2>
+              </div>
+              <div class="col-lg-6">
+                <div
+                  class="home-features__slider swiper"
+                  style="--feature-slide-width: 653px"
+                >
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="feature-card">
+                        <h3 class="feature-card__title fs-40 fw-black">
+                          Result-Driven
+                        </h3>
+                        <p class="feature-card__description fw-regular fs-20">
+                          At Publsh, we don't just aim for success, we guarantee
+                          it. We are committed to delivering measurable results
+                          for clients, ensuring that every campaign is designed
+                          to achieve specific business objectives. Our
+                          result-driven approach ensures that your business
+                          objectives are met every step of the way.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="--feature-slide-width: 480px"
+                    >
+                      <div class="feature-card">
+                        <h3 class="feature-card__title fs-40 fw-black">
+                          Market Specialization
+                        </h3>
+                        <p class="feature-card__description fw-regular fs-20">
+                          We specialize in the UAE, KSA & GCC market, providing
+                          our clients with a deep understanding of the region's
+                          media landscape and audience preferences. With years
+                          of experience and a team of local experts, we offer
+                          unparalleled insights and a comprehensive approach to
+                          communication strategies that ensure maximum impact
+                          and engagement.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="--feature-slide-width: 950px"
+                    >
+                      <div class="feature-card">
+                        <h3 class="feature-card__title fs-40 fw-black">
+                          Guaranteed Coverage
+                        </h3>
+                        <p class="feature-card__description fw-regular fs-20">
+                          For us, the only definition of success is securing the
+                          right media coverage for you on your targeted media
+                          outlets. Our team of expert storytellers and content
+                          writers will create a compelling and newsworthy
+                          narrative for your brand, securing coverage in
+                          top-tier media outlets.
+                        </p>
+                      </div>
+                      <div class="feature-card">
+                        <h3 class="feature-card__title fs-40 fw-black">
+                          Finding the Human in technology
+                        </h3>
+                        <p class="feature-card__description fw-regular fs-20">
+                          Technology can sometimes make communication feel
+                          impersonal and disconnected. At Publsh, we understand
+                          the importance of finding the human element in our
+                          communication strategies. We strive to create
+                          authentic and relatable content that resonates with
+                          our clients' target audience, ultimately driving
+                          engagement and building lasting relationships.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="--feature-slide-width: 480px"
+                    >
+                      <div class="feature-card">
+                        <h3 class="feature-card__title fs-40 fw-black">
+                          Holistic approach
+                        </h3>
+                        <p class="feature-card__description fw-regular fs-20">
+                          Publsh offers a full suite of services, including
+                          press release distribution, influencer marketing,
+                          traditional PR, and loyalty and partnership programs,
+                          making it a one-stop-shop for clients looking to
+                          amplify their brand.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="btn-enquiry-wrap">
+        <button class="btn btn-primary btn-enquiry no-hover-bg">
+          <img src="assets/icons/message.svg" alt="message-icon" />
+          <div class="close-icon"></div>
+        </button>
+        <div class="enquiry-tooltip">Get in touch with us</div>
+      </div>
+      <div
+        class="enquiry-modal modal fade"
+        id="enquiryModal"
+        data-bs-keyboard="false"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="enquiryModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="modal-body">
+              <h4 class="enquiry-modal__title fw-bold h4">
+                <span class="golden-text">Get in touch</span> with us!
+              </h4>
+              <div class="enquiry-modal__form">
+                <form action="">
+                  <div class="form-group">
+                    <label for="enquiry-name" class="form-label">Name</label>
+                    <input type="text" id="enquiry-name" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="enquiry-email" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      id="enquiry-email"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="enquiry-phone" class="form-label"
+                      >Phone number</label
+                    >
+                    <input
+                      type="number"
+                      id="enquiry-phone"
+                      inputmode="number"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="enquiry-message" class="form-label"
+                      >Your message</label
+                    >
+                    <textarea
+                      id="enquiry-message"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                  <input
+                    type="submit"
+                    value="SEND MESSAGE"
+                    class="btn btn-quinary w-100"
+                  />
+                  <input
+                    value="CONTACT ON WHATSAPP"
+                    class="btn btn-outline-quinary w-100"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>

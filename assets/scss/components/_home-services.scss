@@ -1,0 +1,61 @@
+.home-services {
+    background-color: $bg-grey;
+    padding-top: size(120);
+    padding-bottom: size(120);
+    .container {
+        @include min(1600) {
+            max-width: 1354px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .row {
+        --pb-gutter-x: 32px;
+    }
+    .service-card {
+        background-color: var(--service-card-bg);
+        &:not(:last-child) {
+            margin-bottom: size(32);
+        }
+        border-radius: 16px;
+        &__title {
+            margin-bottom: size(40);
+            @include lineHeight(40, 56);
+            color: var(--service-card-text);
+            max-width: 454px;
+        }
+        &__description {
+            @include lineHeight(20, 40);
+            color: var(--service-card-text);
+        }
+        &.columns-2 {
+            padding: size(40);
+            .card-wrap {
+                display: flex;
+                margin-left: size(-36);
+                margin-right: size(-36);
+                align-items: var(--service-title-align);
+                > * {
+                    padding-left: size(36);
+                    padding-right: size(36);
+                }
+            }
+            .service-card {
+                &__title {
+                    margin-bottom: 0;
+                    flex: 0 0 var(--service-title-width);
+                    max-width: var(--service-title-width);
+                }
+                &__description {
+                    flex: 1;
+                }
+            }
+        }
+        &:not(.columns-2) {
+            padding: size(125) size(40) size(40);
+            .service-card__title {
+                max-width: var(--service-title-width);
+            }
+        }
+    }
+}

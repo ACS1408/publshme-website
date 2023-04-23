@@ -1,0 +1,7 @@
+.home-about {
+    padding: size(120) 0;
+    background-color: $bg-grey;
+    &__description {
+        @include lineHeight(20, 40);
+    }
+}

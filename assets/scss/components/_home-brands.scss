@@ -1,0 +1,29 @@
+.home-brands {
+    background-color: $bg-grey;
+    overflow: hidden;
+    &__slider {
+        &.swiper {
+            padding: 5px;
+            overflow: visible;
+        }
+        .swiper-wrapper {
+            transition: 10s linear transform;
+        }
+        &:not(:last-child) {
+            margin-bottom: size(30);
+        }
+    }
+    .brand-slide {
+        background-color: $theme-brand-card-bg;
+        padding: size(24);
+        border-radius: 8px;
+        width: auto;
+        @include noTouchDevices {
+            transition: 0.43s ease-in-out transform, 0.43s ease-in-out box-shadow;
+            &:hover {
+                transform: translate(-4px, -4px);
+                box-shadow: 0 4px 4px $theme-card-box-shadow;
+            }
+        }
+    }
+}

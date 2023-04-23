@@ -1,0 +1,46 @@
+.home-video {
+    background-color: $secondary-color;
+    position: relative;
+    height: 100vh;
+    .video-outer-wrap {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vmax;
+        height: 100vmax;
+        transition: 0.4s ease all;
+        opacity: 0;
+        transform: translateY(60px);
+        will-change: transform, opacity;
+    }
+    .video-wrap {
+        transform: translate(-50%, -32%) scale(0.5);
+        clip-path: circle(50% at 50% 50%);
+        will-change: clip-path;
+        transition: 0.1s ease-in-out clip-path, 1.4s ease-in-out transform;
+    }
+    &__frame {
+        @include aspectRatio(748, 748);
+        video {
+            object-fit: contain;
+        }
+    }
+    .about-title {
+        font-size: size(280);
+        @include lineHeight(280, 280);
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    &.section-in {
+        .video-wrap {
+            transform: translate(-50%, -32%) scale(1);
+            clip-path: circle(100% at 50% 50%);
+            transition: 1.4s ease-in-out clip-path, 0.3s ease-in-out transform;
+        }
+    }
+}

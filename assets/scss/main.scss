@@ -1,0 +1,464 @@
+@import "./root";
+
+@import "./variables";
+@import "./utilities";
+@import "./mixins";
+
+// Bootstrap scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+// @import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+// @import "../../node_modules/bootstrap/scss/tables";
+// @import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/transitions";
+// @import "../../node_modules/bootstrap/scss/dropdown";
+// @import "../../node_modules/bootstrap/scss/button-group";
+// @import "../../node_modules/bootstrap/scss/nav";
+// @import "../../node_modules/bootstrap/scss/navbar";
+// @import "../../node_modules/bootstrap/scss/card";
+// @import "../../node_modules/bootstrap/scss/accordion";
+// @import "../../node_modules/bootstrap/scss/breadcrumb";
+// @import "../../node_modules/bootstrap/scss/pagination";
+// @import "../../node_modules/bootstrap/scss/badge";
+// @import "../../node_modules/bootstrap/scss/alert";
+// @import "../../node_modules/bootstrap/scss/progress";
+// @import "../../node_modules/bootstrap/scss/list-group";
+// @import "../../node_modules/bootstrap/scss/close";
+// @import "../../node_modules/bootstrap/scss/toasts";
+@import "../../node_modules/bootstrap/scss/modal";
+// @import "../../node_modules/bootstrap/scss/tooltip";
+// @import "../../node_modules/bootstrap/scss/popover";
+// @import "../../node_modules/bootstrap/scss/carousel";
+// @import "../../node_modules/bootstrap/scss/spinners";
+// @import "../../node_modules/bootstrap/scss/offcanvas";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// Bootstrap scss-docs-end import-stack
+
+@import "./components/home-banner";
+@import "./components/home-video";
+@import "./components/home-about";
+@import "./components/home-brands";
+@import "./components/home-services";
+@import "./components/home-features";
+
+// Resets
+html,
+body {
+  font-size: 16px;
+  font-family: $ff-primary;
+}
+
+body {
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 40px;
+  }
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  &.no-decoration {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+figure {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+a {
+  cursor: pointer;
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(15, 15, 15);
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill ~ button,
+input:-webkit-autofill:hover ~ button,
+input:-webkit-autofill:focus ~ button {
+  background-color: $primary;
+  color: #fff;
+}
+
+button {
+  &.default {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+ul {
+  &.default {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+}
+
+// font family
+.ff-primary {
+  font-family: $ff-primary;
+}
+
+// title sizes
+@each $level, $size in $h-sizes {
+  h#{$level},
+  .h#{$level} {
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+// text-sizes
+@each $level, $size in $p-sizes {
+  .fs-#{$level} {
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+// font weight
+@each $name, $weight in $font-weights {
+  .fw-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+.btn {
+  outline: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  @include max(991.98) {
+    --pb-btn-font-size: 16px;
+  }
+  &:not(.btn-link) {
+    justify-content: center;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  &-primary {
+    color: $btn-text-primary;
+    @include noTouchDevices {
+      &:not(.no-hover-bg) {
+        &:hover {
+          color: $btn-primary;
+          background-color: $btn-text-primary;
+          border-color: $btn-text-primary;
+        }
+      }
+    }
+  }
+  &-quinary {
+    color: $btn-text-quinary;
+    background-color: $btn-quinary;
+    border-color: $btn-quinary;
+    @include noTouchDevices {
+      &:not(.no-hover-bg) {
+        &:hover {
+          color: $btn-quinary;
+          background-color: $btn-text-quinary;
+          border-color: $btn-quinary;
+        }
+      }
+    }
+  }
+  &-outline-quinary {
+    color: $btn-quinary;
+    background-color: $btn-text-quinary;
+    border-color: $btn-quinary;
+    @include noTouchDevices {
+      &:not(.no-hover-bg) {
+        &:hover {
+          color: $btn-text-quinary;
+          background-color: $btn-quinary;
+          border-color: $btn-quinary;
+        }
+      }
+    }
+  }
+}
+
+.stretch-up {
+  overflow: hidden;
+  > * {
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(100%) scaleY(2.5);
+  }
+}
+
+.fade-up {
+  > * {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.btn-enquiry {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transform-origin: center;
+  will-change: transform, opacity;
+  transition: 0.43s ease-in-out all;
+  @include noTouchDevices {
+    &:hover {
+      transform: scale(1.1) !important;
+    }
+  }
+  &-wrap {
+    position: fixed;
+    bottom: 40px;
+    right: 64px;
+    z-index: 1061;
+    img {
+      transform: scale(1);
+      transition: 0.3s ease-in-out transform, 0.3s ease-in-out opacity;
+      will-change: transform, opacity;
+    }
+    .close-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: 0.3s ease-in-out transform;
+      will-change: transform;
+      transform-origin: center;
+      &::before,
+      &::after {
+        content: "";
+        background-color: $primary-color;
+        width: 32px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    .enquiry-tooltip {
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      transform: translate(-95%, -50%);
+      background-color: $primary-color;
+      opacity: 0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: size(18);
+      font-weight: $fw-medium;
+      transition: 0.43s ease-in-out all;
+      will-change: transform, opacity;
+      color: $quinary-color;
+      white-space: nowrap;
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: $primary-color;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%) rotate(45deg);
+      }
+      &.tooltip-hide {
+        opacity: 0 !important;
+        transform: translate(-105%, -50%) !important;
+      }
+    }
+  }
+}
+
+body {
+  &.modal-open {
+    .btn-enquiry {
+      background-color: $quinary-color;
+      border-color: $quinary-color;
+      img {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+      }
+      .close-icon {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    .enquiry-tooltip {
+      display: none;
+    }
+  }
+}
+
+.enquiry-modal {
+  .modal-content {
+    background-color: $primary-color;
+    border-radius: 32px;
+    padding: size(64);
+  }
+  .modal-body {
+    padding: 0;
+  }
+  .modal-dialog {
+    margin-top: 55px;
+    margin-bottom: 40px;
+    margin-right: 164px;
+    min-height: calc(100% - 95px);
+    display: flex;
+    align-items: flex-end;
+    @include min(576) {
+      max-width: 548px;
+    }
+  }
+  &__title {
+    color: $white;
+    margin-bottom: size(24);
+    text-align: center;
+    .golden-text {
+      color: $quinary-color;
+    }
+  }
+  .btn-close {
+    display: none;
+  }
+  &__form {
+    input[type="submit"] {
+      margin-top: size(50);
+      margin-bottom: size(24);
+    }
+  }
+}
+.modal-backdrop {
+  opacity: 0 !important;
+}
+
+.form-group {
+  margin-bottom: size(16);
+  position: relative;
+  padding-top: size(16);
+  height: 60px;
+  .form-label {
+    color: $white;
+    font-size: size(20);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.3s ease-in-out all;
+    will-change: transform, font-size;
+    pointer-events: none;
+  }
+  .form-control {
+    color: $white;
+    font-size: 16px;
+    font-weight: $fw-regular;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    width: 100%;
+    height: 100%;
+    &:focus,
+    &:focus-visible {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+  textarea {
+    resize: none;
+  }
+  &.focused {
+    .form-label {
+      font-size: size(14);
+      transform: translateY(-130%);
+    }
+  }
+}

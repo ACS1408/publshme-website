@@ -1,0 +1,81 @@
+.home-features {
+    background-color: $bg-grey;
+    &.section-in {
+        .section-inner {
+            border-radius: 0;
+        }
+        .home-features__title {
+            .word {
+                overflow: hidden;
+                .wordInner {
+                    transform: initial !important;
+                    transition-delay: calc(3ms * var(--word-index)) !important;
+                    will-change: transform;
+                }
+            }
+        }
+    }
+    .section-inner {
+        min-height: 100vh;
+        padding: size(30) 0;
+        overflow: hidden;
+        border-radius: 64px;
+        background-color: $bg-orange;
+        transition: 0.5s ease-in-out border-radius;
+        will-change: border-radius;
+    }
+    &__title {
+        color: $title-dark;
+        .word {
+            overflow: hidden;
+            display: inline-block;
+            .wordInner {
+                display: inline-block;
+                transform: scaleY(2.5) translateY(1.5em);
+                transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+                transition-delay: 0;
+                will-change: transform;
+            }
+        }
+    }
+    &__slider {
+        &.swiper {
+            overflow: visible;
+            .swiper-wrapper {
+                align-items: flex-end;
+            }
+        }
+        .feature-card {
+            background-color: $card-bg;
+            border-radius: 16px;
+            padding: size(40);
+            &:not(:last-child) {
+                margin-bottom: size(40);
+            }
+            &__title {
+                @include lineHeight(40, 56);
+            }
+            &__description {
+                @include lineHeight(20, 40);
+            }
+        }
+        .swiper-slide {
+            width: var(--feature-slide-width);
+            &:not(:nth-child(3n)) {
+                .feature-card__title {
+                    // margin-bottom: size(143);
+                    margin-bottom: size(100);
+                }
+            }
+            &:nth-child(3n) {
+                .feature-card {
+                    display: flex;
+                    align-items: flex-end;
+                    &__title {
+                        margin-right: size(87);
+                    }
+                }
+            }
+        }
+    }
+}
