@@ -31,6 +31,10 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+};
+
 document
   .querySelectorAll(".enquiry-modal__form input, .enquiry-modal__form textarea")
   .forEach(function (input) {
@@ -126,14 +130,37 @@ window.addEventListener("load", () => {
 // video section
 const imageWrap = document.querySelector(".home-video .video-wrap");
 let progress = 0;
-
+const homeVideo = document.getElementById("home-video");
+const homeVideoPoster = document.querySelector(".home-video__poster");
 ScrollTrigger.create({
   trigger: ".home-video",
   start: "32% center",
-  end: "bottom top",
+  end: "bottom+=50% top",
   anticipatePin: 1,
   pin: ".home-video",
   toggleClass: "section-in",
+  onEnter: () => {
+    setTimeout(() => {
+      homeVideo.play();
+      homeVideoPoster.style.zIndex = -1;
+    }, 300);
+  },
+  onLeave: () => {
+    homeVideo.pause();
+    homeVideo.currentTime = 0;
+    homeVideoPoster.style.zIndex = 2;
+  },
+  onEnterBack: () => {
+    setTimeout(() => {
+      homeVideo.play();
+      homeVideoPoster.style.zIndex = -1;
+    }, 300);
+  },
+  onLeaveBack: () => {
+    homeVideo.pause();
+    homeVideo.currentTime = 0;
+    homeVideoPoster.style.zIndex = 2;
+  },
 });
 
 // feature section

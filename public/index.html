@@ -44,11 +44,17 @@
         <div class="video-outer-wrap">
           <div class="video-wrap">
             <div class="home-video__frame">
+              <figure class="home-video__poster">
+                <img src="assets/images/home-video-poster.png" alt="">
+              </figure>
               <video
-                src="assets/videos/home-video.mp4"
-                poster="assets/images/home-video-poster.jpg"
+                id="home-video"
+                poster="assets/images/home-video-poster.png"
                 playsinline
-              ></video>
+                muted
+              >
+                <source src="assets/videos/home-video.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

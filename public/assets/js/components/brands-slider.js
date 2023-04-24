@@ -13,7 +13,7 @@ const brandsSlider = () => {
       disableOnInteraction: false,
     },
     allowTouchMove: false,
-    speed: 5000,
+    speed: 3000,
     loop: true,
   });
   var brandsSliderBottom = new Swiper(".home-brands__slider.brands-bottom", {
