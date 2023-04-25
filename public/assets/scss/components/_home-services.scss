@@ -1,7 +1,11 @@
 .home-services {
     background-color: $bg-grey;
-    padding-top: size(120);
-    padding-bottom: size(120);
+    padding-top: size(64);
+    padding-bottom: size(64);
+    @include min(992) {
+        padding-top: size(120);
+        padding-bottom: size(120);
+    }
     .container {
         @include min(1600) {
             max-width: 1354px;
@@ -11,18 +15,32 @@
     }
     .row {
         --pb-gutter-x: 32px;
+        > * {
+            &:not(:last-child) {
+                @include max(991.98){
+                    margin-bottom: size(16);
+                }
+            }
+        }
     }
     .service-card {
         background-color: var(--service-card-bg);
-        &:not(:last-child) {
-            margin-bottom: size(32);
-        }
         border-radius: 16px;
+        &:not(:last-child) {
+            margin-bottom: size(16);
+            @include min(992) {
+                margin-bottom: size(32);
+            }
+        }
         &__title {
-            margin-bottom: size(40);
-            @include lineHeight(40, 56);
+            margin-bottom: size(24);
+            @include lineHeight(24, 32);
             color: var(--service-card-text);
             max-width: 454px;
+            @include min(992.98) {
+                margin-bottom: size(40);
+                @include lineHeight(40, 56);
+            }
         }
         &__description {
             @include lineHeight(20, 40);
@@ -30,29 +48,39 @@
         }
         &.columns-2 {
             padding: size(40);
+            @include min(992) {
+                padding: size(40) size(24);
+            }
             .card-wrap {
-                display: flex;
-                margin-left: size(-36);
-                margin-right: size(-36);
-                align-items: var(--service-title-align);
-                > * {
-                    padding-left: size(36);
-                    padding-right: size(36);
+                @include min(992) {
+                    display: flex;
+                    margin-left: size(-36);
+                    margin-right: size(-36);
+                    align-items: var(--service-title-align);
+                    > * {
+                        padding-left: size(36);
+                        padding-right: size(36);
+                    }
                 }
             }
             .service-card {
-                &__title {
-                    margin-bottom: 0;
-                    flex: 0 0 var(--service-title-width);
-                    max-width: var(--service-title-width);
-                }
-                &__description {
-                    flex: 1;
+                @include min(992) {
+                    &__title {
+                        margin-bottom: 0;
+                        flex: 0 0 var(--service-title-width);
+                        max-width: var(--service-title-width);
+                    }
+                    &__description {
+                        flex: 1;
+                    }
                 }
             }
         }
         &:not(.columns-2) {
-            padding: size(125) size(40) size(40);
+            padding: size(40) size(24);
+            @include min(992) {
+                padding: size(125) size(40) size(40);
+            }
             .service-card__title {
                 max-width: var(--service-title-width);
             }

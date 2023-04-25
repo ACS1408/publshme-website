@@ -5,7 +5,14 @@ const publshSlider = () => {
   var featureSlider = new Swiper(".home-features__slider", {
     slidesPerView: "auto",
     spaceBetween: 40,
-    allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: [
+      {
+        992: {
+          allowTouchMove: false,
+        },
+      },
+    ],
   });
   return { featureSlider };
 };

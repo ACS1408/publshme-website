@@ -274,16 +274,20 @@ ul {
 .stretch-up {
   overflow: hidden;
   > * {
-    opacity: 0;
-    display: inline-block;
-    transform: translateY(100%) scaleY(2.5);
+    @include min(992) {
+      opacity: 0;
+      display: inline-block;
+      transform: translateY(100%) scaleY(2.5);
+    }
   }
 }
 
 .fade-up {
   > * {
-    opacity: 0;
-    transform: translateY(20px);
+    @include min(992) {
+      opacity: 0;
+      transform: translateY(20px);
+    }
   }
 }
 

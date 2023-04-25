@@ -10,7 +10,10 @@
             transition: 10s linear transform;
         }
         &:not(:last-child) {
-            margin-bottom: size(30);
+            margin-bottom: size(16);
+            @include min(992) {
+                margin-bottom: size(30);
+            }
         }
     }
     .brand-slide {
