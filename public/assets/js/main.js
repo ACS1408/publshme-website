@@ -181,7 +181,7 @@ if (isDesktop) {
 
   // feature section
   gsap.utils
-    .toArray(".home-features__slider .swiper-wrapper")
+    .toArray(".home-features__slider.slider-desk .swiper-wrapper")
     .forEach((container) => {
       let children = gsap.utils.toArray(container.children);
       let tl2 = gsap.timeline({
