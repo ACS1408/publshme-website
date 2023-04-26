@@ -1,0 +1,35 @@
+.service-slider-sec {
+    background-color: $primary-color;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .swiper {
+        overflow: visible;
+    }
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.8s ease-in-out transform;
+        &.swiper-slide-next {
+            transform: scale(0.8) translateX(-2%);
+            transform-origin: left;
+        }
+        &.swiper-slide-active {
+            transform: scale(1.13);
+        }
+        .service-title {
+            font-size: size(80);
+            font-weight: $fw-black;
+            color: $white;
+            margin-right: 100px;
+        }
+        .service-description {
+            font-size: size(16);
+            font-weight: $fw-light;
+            color: $white;
+            max-width: 224px;
+            margin-left: 24px;
+        }
+    }
+}

@@ -10,7 +10,8 @@ const publshSlider = () => {
   var featureSliderMob = new Swiper(".home-features__slider.slider-mob", {
     slidesPerView: "auto",
     spaceBetween: 40,
-    allowTouchMove: true
+    allowTouchMove: true,
+    freeMode: true
   });
   return { featureSlider, featureSliderMob };
 };

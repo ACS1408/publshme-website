@@ -5,11 +5,13 @@ import brandsSlider from "./components/brands-slider";
 import publshSlider from "./components/publsh-slider";
 import splitText from "./components/splitText";
 import { Modal } from "bootstrap";
+import serviceSlider from "./components/service-slider";
 
 document.addEventListener("DOMContentLoaded", () => {
   const { brandsSliderTop, brandsSliderBottom } = brandsSlider();
 });
 const { featureSlider } = publshSlider();
+const { workSlider } = serviceSlider();
 
 const split = splitText();
 

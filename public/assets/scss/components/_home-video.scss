@@ -50,17 +50,6 @@
             background-color: #000;
         }
     }
-    .about-title {
-        font-size: size(220);
-        @include lineHeight(280, 280);
-        text-align: center;
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-    }
     &.section-in {
         .video-wrap {
             transform: translate(-50%, -32%) scale(1);
