@@ -256,6 +256,10 @@ ul {
       }
     }
   }
+  &-green {
+    color: $btn-text-green;
+    background-color: $btn-green;
+  }
   &-outline-quinary {
     color: $btn-quinary;
     background-color: $btn-text-quinary;
@@ -358,6 +362,12 @@ ul {
       will-change: transform, opacity;
       color: $quinary-color;
       white-space: nowrap;
+      &.green {
+        background-color: $btn-green;
+        &::after {
+          background-color: $btn-green;
+        }
+      }
       &::after {
         content: "";
         width: 10px;
@@ -401,6 +411,29 @@ body {
 }
 
 .enquiry-modal {
+  &.green {
+    .modal-content {
+      background-color: $btn-green;
+      .btn-quinary{
+        color: $btn-green;
+        @include noTouchDevices {
+          &:hover {
+            background-color: $btn-green;
+            color: $quinary-color;
+          }
+        }
+      }
+      .btn-outline-quinary {
+        background-color: $btn-green;
+        @include noTouchDevices {
+          &:hover {
+            background-color: $quinary-color;
+            color: $btn-green;
+          }
+        }
+      }
+    }
+  }
   .modal-content {
     background-color: $primary-color;
     border-radius: 32px;

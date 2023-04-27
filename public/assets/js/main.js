@@ -1,17 +1,18 @@
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Power2 } from "gsap/all";
+import { Modal } from "bootstrap";
+import splitText from "./components/splitText";
 import brandsSlider from "./components/brands-slider";
 import publshSlider from "./components/publsh-slider";
-import splitText from "./components/splitText";
-import { Modal } from "bootstrap";
 import serviceSlider from "./components/service-slider";
 
 document.addEventListener("DOMContentLoaded", () => {
   const { brandsSliderTop, brandsSliderBottom } = brandsSlider();
 });
 const { featureSlider } = publshSlider();
-const { workSlider } = serviceSlider();
+const { workSlider, workTitleSlider } = serviceSlider();
 
 const split = splitText();
 
@@ -40,6 +41,12 @@ window.onbeforeunload = () => {
 };
 
 const enquiryModalSelector = document.getElementById("enquiryModal");
+var enquiryModal = new Modal(enquiryModalSelector);
+document.querySelectorAll(".btn-enquiry-popup").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    enquiryModal.toggle();
+  });
+});
 enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
   lenis.stop();
 });
@@ -49,7 +56,7 @@ enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
 
 document
   .querySelectorAll(".enquiry-modal__form input, .enquiry-modal__form textarea")
-  .forEach(function (input) {
+  .forEach((input) => {
     input.addEventListener("focus", () => {
       input.closest(".form-group").classList.add("focused");
     });
@@ -65,13 +72,6 @@ document
       }
     });
   });
-
-var enquiryModal = new Modal(document.getElementById("enquiryModal"));
-document.querySelectorAll(".btn-enquiry-popup").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    enquiryModal.toggle();
-  });
-});
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -146,7 +146,6 @@ if (isDesktop) {
   // video section
   const homeVideo = document.getElementById("home-video");
   const homeVideoPoster = document.querySelector(".home-video__poster");
-  const aboutTitle = document.querySelector(".home-video .about-title");
   ScrollTrigger.create({
     trigger: ".home-video",
     start: "32% center",
@@ -164,7 +163,6 @@ if (isDesktop) {
       homeVideo.pause();
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
-      // aboutTitle.style.opacity = 1;
       document.querySelector(".video-wrap").classList.add("fit-to-about");
     },
     onEnterBack: () => {
@@ -186,7 +184,7 @@ if (isDesktop) {
     .toArray(".home-features__slider.slider-desk .swiper-wrapper")
     .forEach((container) => {
       let children = gsap.utils.toArray(container.children);
-      let tl2 = gsap.timeline({
+      let tlFeatures = gsap.timeline({
         scrollTrigger: {
           trigger: container.closest("section"),
           start: "center center",
@@ -201,12 +199,94 @@ if (isDesktop) {
       });
       let changeFeatureSlider = () =>
         featureSlider.slideTo(
-          tl2.scrollTrigger.direction < 0
+          tlFeatures.scrollTrigger.direction < 0
             ? featureSlider.activeIndex - 1
             : featureSlider.activeIndex + 1
         );
 
-      children.forEach((child, i) => tl2.add(changeFeatureSlider, i + 1));
-      tl2.set({}, { delay: 1 });
+      children.forEach((child, i) =>
+        tlFeatures.add(changeFeatureSlider, i + 1)
+      );
+      tlFeatures.set({}, { delay: 1 });
     });
+
+  const serviceSlider = document.querySelector(".service-slider");
+  if (serviceSlider) {
+    gsap.utils
+      .toArray(".service-slider .swiper-wrapper")
+      .forEach((container) => {
+        let children = gsap.utils.toArray(container.children);
+        let tlService = gsap.timeline({
+          scrollTrigger: {
+            trigger: container.closest("section"),
+            start: "center center",
+            end: `+=${container.offsetWidth * 2}`,
+            anticipatePin: 1,
+            scrub: true,
+            force3D: true,
+            useCSS: true,
+            pin: container.closest("section"),
+            toggleClass: "section-in",
+          },
+        });
+        let changeWorkSlider = () =>
+          workSlider.slideTo(
+            tlService.scrollTrigger.direction < 0
+              ? workSlider.activeIndex - 1
+              : workSlider.activeIndex + 1
+          );
+
+        children.forEach((child, i) => tlService.add(changeWorkSlider, i + 1));
+        tlService.set({}, { delay: 1 });
+      });
+
+    let sliderMouseOver = false;
+    serviceSlider.addEventListener("mouseenter", () => {
+      sliderMouseOver = true;
+    });
+    serviceSlider.addEventListener("mouseleave", () => {
+      sliderMouseOver = false;
+    });
+
+    const serviceCursor = document.getElementById("view-service-cursor");
+    serviceSlider.addEventListener("mousedown", () => {
+      gsap.to(serviceCursor, 0.5, {
+        scale: 0.6,
+        ease: Power2.easeOut,
+      });
+    });
+
+    serviceSlider.addEventListener("mouseup", () => {
+      gsap.to(serviceCursor, 0.5, {
+        scale: 1,
+        ease: Power2.easeOut,
+      });
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      var { clientX, clientY } = e;
+      const clientLeft = clientX;
+      const clientTop = clientY;
+      if (sliderMouseOver) {
+        gsap.to(serviceCursor, 0.5, {
+          opacity: 1,
+          scale: 1,
+          left: clientLeft,
+          top: clientTop,
+          ease: Power2.easeOut,
+        });
+      } else {
+        gsap.to(serviceCursor, 0.3, {
+          opacity: 0,
+          left: clientLeft,
+          top: clientTop,
+          ease: Power2.easeOut,
+        });
+        gsap.to(serviceCursor, 1, {
+          scale: 0.5,
+          ease: Power2.easeOut,
+        });
+      }
+    });
+  }
 }

@@ -10,52 +10,160 @@
   <body>
     <section class="service-slider-sec">
       <div class="container">
-        <div class="service-slider swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <h2 class="service-title">MCDONALD'S</h2>
-              <figure class="service-image">
-                <img src="assets/images/service-1.png" alt="" />
-              </figure>
-              <p class="service-description">
-                The collaboration brings back the essence of childhood to Dubai
-                residents.
-              </p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="service-title-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h2 class="service-title" data-word-split>MCDONALD'S</h2>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="service-title" data-word-split>EMAAR</h2>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="service-title" data-word-split>P&G - Always</h2>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="service-title" data-word-split>Oraimo</h2>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="service-title" data-word-split>KLAIM</h2>
+                </div>
+              </div>
             </div>
-            <div class="swiper-slide">
-              <h2 class="service-title">MCDONALD'S</h2>
-              <figure class="service-image">
-                <img src="assets/images/service-1.png" alt="" />
-              </figure>
-              <p class="service-description">
-                The collaboration brings back the essence of childhood to Dubai
-                residents.
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <h2 class="service-title">MCDONALD'S</h2>
-              <figure class="service-image">
-                <img src="assets/images/service-1.png" alt="" />
-              </figure>
-              <p class="service-description">
-                The collaboration brings back the essence of childhood to Dubai
-                residents.
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <h2 class="service-title">MCDONALD'S</h2>
-              <figure class="service-image">
-                <img src="assets/images/service-1.png" alt="" />
-              </figure>
-              <p class="service-description">
-                The collaboration brings back the essence of childhood to Dubai
-                residents.
-              </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure class="service-image">
+                    <img src="assets/images/service-1.png" alt="" />
+                  </figure>
+                  <p class="service-description">
+                    The collaboration brings back the essence of childhood to
+                    Dubai residents.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="service-image">
+                    <img src="assets/images/service-1.png" alt="" />
+                  </figure>
+                  <p class="service-description">
+                    The collaboration brings back the essence of childhood to
+                    Dubai residents.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="service-image">
+                    <img src="assets/images/service-1.png" alt="" />
+                  </figure>
+                  <p class="service-description">
+                    The collaboration brings back the essence of childhood to
+                    Dubai residents.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="service-image">
+                    <img src="assets/images/service-1.png" alt="" />
+                  </figure>
+                  <p class="service-description">
+                    The collaboration brings back the essence of childhood to
+                    Dubai residents.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="service-image">
+                    <img src="assets/images/service-1.png" alt="" />
+                  </figure>
+                  <p class="service-description">
+                    The collaboration brings back the essence of childhood to
+                    Dubai residents.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <div class="custom-cursor" id="view-service-cursor">VIEW</div>
+    <div class="btn-enquiry-wrap">
+      <button class="btn btn-green btn-enquiry btn-enquiry-popup no-hover-bg">
+        <img src="assets/icons/message.svg" alt="message-icon" />
+        <div class="close-icon"></div>
+      </button>
+      <div class="enquiry-tooltip green">Get in touch with us</div>
+    </div>
+    <div
+      class="enquiry-modal modal fade green"
+      id="enquiryModal"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="enquiryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <h4 class="enquiry-modal__title fw-bold h4">
+              <span class="golden-text">Get in touch</span> with us!
+            </h4>
+            <div class="enquiry-modal__form">
+              <form action="">
+                <div class="form-group">
+                  <label for="enquiry-name" class="form-label">Name</label>
+                  <input type="text" id="enquiry-name" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="enquiry-email" class="form-label"
+                    >Email address</label
+                  >
+                  <input type="email" id="enquiry-email" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="enquiry-phone" class="form-label"
+                    >Phone number</label
+                  >
+                  <input
+                    type="number"
+                    id="enquiry-phone"
+                    inputmode="number"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="enquiry-message" class="form-label"
+                    >Your message</label
+                  >
+                  <textarea
+                    id="enquiry-message"
+                    class="form-control"
+                  ></textarea>
+                </div>
+                <input
+                  type="submit"
+                  value="SEND MESSAGE"
+                  class="btn btn-quinary w-100"
+                />
+                <a
+                  href="https://wa.me/+971509848673"
+                  class="btn btn-outline-quinary w-100 no-decoration"
+                >
+                  CONTACT ON WHATSAPP
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="output/bundle.js"></script>
   </body>
 </html>
