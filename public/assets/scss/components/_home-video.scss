@@ -36,14 +36,12 @@
             will-change: clip-path;
             transition: 0.1s ease-in-out clip-path, 0.8s ease-in-out transform;
         }
-        // &.fit-to-about {
-        //     transform: translate(-64%, -27%) scale(0.13);
-        // }
     }
     &__frame {
         @include aspectRatio(748, 748);
         video {
             object-fit: contain;
+            object-position: center 60%;
             z-index: 1;
             opacity: 0;
             transition: 0.8s ease-in-out opacity;

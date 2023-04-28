@@ -33,6 +33,8 @@
             }
         }
         &__title {
+            font-family: $ff-primary !important;
+            font-weight: $fw-black;
             margin-bottom: size(24);
             @include lineHeight(24, 32);
             color: var(--service-card-text);
@@ -43,6 +45,7 @@
             }
         }
         &__description {
+            font-family: $ff-primary !important;
             @include lineHeight(20, 40);
             color: var(--service-card-text);
         }

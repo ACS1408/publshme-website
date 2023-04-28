@@ -3,6 +3,57 @@
     padding: size(64) 0;
     @include min(992) {
         padding: size(120) 0;
+        // height: 100vh;
+        // display: flex;
+        // align-items: center;
+    }
+    &__title {
+        font-family: $ff-primary !important;
+        font-weight: $fw-medium !important;
+        .word {
+            overflow: hidden;
+            display: inline-block;
+            .wordInner {
+                display: inline-block;
+                transform: scaleY(2.5) translateY(1.5em);
+                transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+                will-change: transform;
+            }
+        }
+        &.inView {
+            .wordInner {
+                transform: scaleY(1) translateY(0);
+                transition-delay: calc(3ms * var(--word-index)) !important;
+            }
+        }
+        // @include min(992) {
+        //     transition: 1s ease-in-out all;
+        //     transform-origin: left;
+        //     .terminal-letters {
+        //         display: inline-block;
+        //         &.left {
+        //             transform: translateX(-100px);
+        //         }
+        //         &.right {
+        //             transform: translateX(100px);
+        //         }
+        //     }
+        //     #pos-o-letter {
+        //         opacity: 0;
+        //         visibility: hidden;
+        //     }
+        // }
+        // &.pos-adjust {
+        //     @include min(992) {
+        //         transform: scale(3) translate(4%, 1vh);
+        //     }
+        // }
+        @include min(1200) {
+            font-size: size(83);
+        }
+        @include min(1600) {
+            font-size: size(105);
+        }
     }
     &__description {
         @include lineHeight(20, 40);

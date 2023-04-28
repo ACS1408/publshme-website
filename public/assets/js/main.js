@@ -143,6 +143,17 @@ if (isDesktop) {
     },
   });
 
+  // gsap.utils.toArray(".text-reveal").forEach((elem) => {
+  //   ScrollTrigger.create({
+  //     trigger: 'text-reveal',
+  //     start: "top center",
+  //     end: "bottom center",
+  //     toggleClass: 'inView',
+  //     once: true,
+  //     markers: true
+  //   });
+  // });
+
   // video section
   const homeVideo = document.getElementById("home-video");
   const homeVideoPoster = document.querySelector(".home-video__poster");
@@ -157,29 +168,66 @@ if (isDesktop) {
       setTimeout(() => {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
+        // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
       }, 300);
     },
     onLeave: () => {
       homeVideo.pause();
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
-      document.querySelector(".video-wrap").classList.add("fit-to-about");
+      // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
     },
     onEnterBack: () => {
       setTimeout(() => {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
-        document.querySelector(".video-wrap").classList.remove("fit-to-about");
+        // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
       }, 300);
     },
     onLeaveBack: () => {
       homeVideo.pause();
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
+      // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+    },
+  });
+
+  // about section
+  // const title = document.querySelector(".home-about__title");
+  // const text = title.textContent;
+
+  // const regex = /(WH)(O)( WE ARE)/;
+  // const matches = text.match(regex);
+
+  // const wrappedText = `<span class="terminal-letters left">${matches[1]} </span><span id="pos-o-letter">${matches[2]}</span><span class="terminal-letters right"> ${matches[3]}</span>`;
+  // title.innerHTML = wrappedText;
+
+  gsap.from(".home-about__title", {
+    scrollTrigger: {
+      trigger: ".home-about__title",
+      start: "top+=10% center",
+      onEnter: () => {
+        document.querySelector(".home-about__title").classList.add("inView");
+      },
     },
   });
 
   // feature section
+  gsap.from(".home-features__title", {
+    scrollTrigger: {
+      trigger: ".home-features__title",
+      start: "bottom+=10% center",
+      onEnter: () => {
+        document.querySelector(".home-features__title").classList.add("inView");
+      },
+      onLeaveBack: () => {
+        document
+          .querySelector(".home-features__title")
+          .classList.remove("inView");
+      },
+    },
+  });
+
   gsap.utils
     .toArray(".home-features__slider.slider-desk .swiper-wrapper")
     .forEach((container) => {
@@ -188,7 +236,7 @@ if (isDesktop) {
         scrollTrigger: {
           trigger: container.closest("section"),
           start: "center center",
-          end: `+=${container.offsetWidth * 4}`,
+          end: `+=${container.offsetWidth * 3}`,
           anticipatePin: 1,
           scrub: true,
           force3D: true,
@@ -197,6 +245,8 @@ if (isDesktop) {
           toggleClass: "section-in",
         },
       });
+      tlFeatures.addPause();
+      tlFeatures.delay(10);
       let changeFeatureSlider = () =>
         featureSlider.slideTo(
           tlFeatures.scrollTrigger.direction < 0
@@ -210,6 +260,7 @@ if (isDesktop) {
       tlFeatures.set({}, { delay: 1 });
     });
 
+  // Service Slider
   const serviceSlider = document.querySelector(".service-slider");
   if (serviceSlider) {
     gsap.utils
@@ -220,7 +271,7 @@ if (isDesktop) {
           scrollTrigger: {
             trigger: container.closest("section"),
             start: "center center",
-            end: `+=${container.offsetWidth * 2}`,
+            end: `+=${container.offsetWidth * 3}`,
             anticipatePin: 1,
             scrub: true,
             force3D: true,

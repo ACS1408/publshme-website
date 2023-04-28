@@ -101,6 +101,7 @@ html.lenis {
 }
 
 * {
+  font-family: $ff-primary;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -231,45 +232,46 @@ ul {
     box-shadow: none !important;
   }
   &-primary {
-    color: $btn-text-primary;
+    color: $btn-text-primary !important;
+    background-color: $primary-color !important;
     @include noTouchDevices {
       &:not(.no-hover-bg) {
         &:hover {
-          color: $btn-primary;
-          background-color: $btn-text-primary;
-          border-color: $btn-text-primary;
+          color: $btn-primary !important;
+          background-color: $btn-text-primary !important;
+          border-color: $btn-text-primary !important;
         }
       }
     }
   }
   &-quinary {
-    color: $btn-text-quinary;
-    background-color: $btn-quinary;
-    border-color: $btn-quinary;
+    color: $btn-text-quinary !important;
+    background-color: $btn-quinary !important;
+    border-color: $btn-quinary !important;
     @include noTouchDevices {
       &:not(.no-hover-bg) {
         &:hover {
-          color: $btn-quinary;
-          background-color: $btn-text-quinary;
-          border-color: $btn-quinary;
+          color: $btn-quinary !important;
+          background-color: $btn-text-quinary !important;
+          border-color: $btn-quinary !important;
         }
       }
     }
   }
   &-green {
-    color: $btn-text-green;
-    background-color: $btn-green;
+    color: $btn-text-green !important;
+    background-color: $btn-green !important;
   }
   &-outline-quinary {
-    color: $btn-quinary;
-    background-color: $btn-text-quinary;
-    border-color: $btn-quinary;
+    color: $btn-quinary !important;
+    background-color: $btn-text-quinary !important;
+    border-color: $btn-quinary !important;
     @include noTouchDevices {
       &:not(.no-hover-bg) {
         &:hover {
-          color: $btn-text-quinary;
-          background-color: $btn-quinary;
-          border-color: $btn-quinary;
+          color: $btn-text-quinary !important;
+          background-color: $btn-quinary !important;
+          border-color: $btn-quinary !important;
         }
       }
     }
@@ -295,6 +297,20 @@ ul {
     }
   }
 }
+
+// .text-reveal {
+//   display: block;
+//   @include min(992) {
+//     opacity: 0;
+//     transform: translateY(20px);
+//   }
+//   &.inView {
+//     @include min(992) {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+//   }
+// }
 
 .btn-enquiry {
   width: 80px;
@@ -414,7 +430,7 @@ body {
   &.green {
     .modal-content {
       background-color: $btn-green;
-      .btn-quinary{
+      .btn-quinary {
         color: $btn-green;
         @include noTouchDevices {
           &:hover {
@@ -538,6 +554,16 @@ body {
     .form-label {
       font-size: size(14);
       transform: translateY(-130%);
+    }
+  }
+}
+
+.elementor-element {
+  &.elementor-widget-icon {
+    &[data-widget_type="icon.default"] {
+      .elementor-icon-wrapper {
+        display: none !important;
+      }
     }
   }
 }

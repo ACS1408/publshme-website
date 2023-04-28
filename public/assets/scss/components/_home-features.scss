@@ -4,17 +4,6 @@
         .section-inner {
             border-radius: 0;
         }
-        .home-features__title {
-            .word {
-                overflow: hidden;
-                .wordInner {
-                    transform: scaleY(2.5) translateY(1.5em);
-                    transition-delay: calc(3ms * var(--word-index)) !important;
-                    will-change: transform;
-                    transition-delay: 0.43s !important;
-                }
-            }
-        }
     }
     .section-inner {
         min-height: 100vh;
@@ -46,6 +35,12 @@
                 will-change: transform;
             }
         }
+        &.inView {
+            .wordInner {
+                transform: scaleY(2.5) translateY(1.5em);
+                transition-delay: calc(3ms * var(--word-index)) !important;
+            }
+        }
     }
     &__slider {
         @include min(992) {
@@ -53,6 +48,7 @@
                 overflow: visible;
                 .swiper-wrapper {
                     align-items: flex-end;
+                    transition: 0.8s cubic-bezier(0.53, 0.03, 0.22, 0.37) transform !important;
                 }
             }
         }

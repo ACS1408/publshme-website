@@ -24,7 +24,8 @@
         }
     }
     .service-slider {
-        padding: 33px 60px;
+        padding-left: 60px;
+        padding-block: 35px;
         cursor: none;
         .service-description {
             opacity: 1;
@@ -109,10 +110,10 @@
         }
     }
     .service-title {
-        font-size: size(80);
+        font-size: size(75);
         font-weight: $fw-black;
         color: $white;
-        margin-right: 100px;
+        margin-right: auto;
         margin-bottom: 0;
         .word {
             overflow: hidden;
