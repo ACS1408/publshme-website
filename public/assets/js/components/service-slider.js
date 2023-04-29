@@ -6,7 +6,7 @@ Swiper.use([EffectFade, Controller]);
 
 const serviceSlider = () => {
   var workSlider = new Swiper(".service-slider", {
-    slidesPerView: 1.1,
+    slidesPerView: 1.2,
     speed: 1000,
   });
   var workTitleSlider = new Swiper(".service-title-slider", {

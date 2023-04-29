@@ -169,6 +169,7 @@ if (isDesktop) {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
         // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
+        document.querySelector('.home-video__title').classList.add('inView');
       }, 300);
     },
     onLeave: () => {
@@ -176,12 +177,14 @@ if (isDesktop) {
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
       // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
+        document.querySelector('.home-video__title').classList.remove('inView');
     },
     onEnterBack: () => {
       setTimeout(() => {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
         // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+        document.querySelector('.home-video__title').classList.add('inView');
       }, 300);
     },
     onLeaveBack: () => {
@@ -189,6 +192,7 @@ if (isDesktop) {
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
       // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+        document.querySelector('.home-video__title').classList.remove('inView');
     },
   });
 
@@ -205,7 +209,7 @@ if (isDesktop) {
   gsap.from(".home-about__title", {
     scrollTrigger: {
       trigger: ".home-about__title",
-      start: "top+=10% center",
+      start: "top bottom-=10%",
       onEnter: () => {
         document.querySelector(".home-about__title").classList.add("inView");
       },
@@ -216,7 +220,7 @@ if (isDesktop) {
   gsap.from(".home-features__title", {
     scrollTrigger: {
       trigger: ".home-features__title",
-      start: "bottom+=10% center",
+      start: "center center",
       onEnter: () => {
         document.querySelector(".home-features__title").classList.add("inView");
       },

@@ -45,12 +45,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: size(10) size(15);
+            gap: size(10) size(38);
             @include min(992) {
                 gap: size(50);
             }
             li {
                 position: relative;
+                font-size: size(16);
                 &::before {
                     content: "";
                     width: 12px;

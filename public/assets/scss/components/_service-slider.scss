@@ -9,9 +9,11 @@
         margin-right: 0;
         padding-right: 0;
         @include min(1200) {
+            width: 100%;
             max-width: calc((50vw - (1140px / 2)) + 1140px + 12px);
         }
         @include min(1600) {
+            width: 100%;
             max-width: calc((50vw - (1600px / 2)) + 1600px + 12px);
         }
         .row {
@@ -24,8 +26,8 @@
         }
     }
     .service-slider {
-        padding-left: 60px;
-        padding-block: 35px;
+        padding-left: 70px;
+        padding-block: 40px;
         cursor: none;
         .service-description {
             opacity: 1;
@@ -36,6 +38,8 @@
             border-radius: 24px;
             overflow: hidden;
             transition: 0.8s ease-in-out transform;
+            @include aspectRatio(750, 591);
+            width: 491px;
         }
         .swiper {
             overflow: visible;
