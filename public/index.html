@@ -16,6 +16,15 @@
 
   <body>
     <main>
+      <div class="pb-preloader__bg"></div>
+      <div class="pb-preloader">
+        <div class="pb-preloader__wrap">
+          <div class="pb-preloader__bar">
+            <div class="pb-preloader__circle"></div>
+            <span class="pb-preloader__text">Loading</span>
+          </div>
+        </div>
+      </div>
       <!-- Section: Home Banner -->
       <section class="home-banner">
         <div class="container">
@@ -56,7 +65,9 @@
               >
                 <source src="assets/videos/home-video.mp4" type="video/mp4" />
               </video>
-              <h2 class="home-video__title" data-word-split>TELLING STORIES WITHOUT BORDERS</h2>
+              <h2 class="home-video__title" data-word-split>
+                TELLING STORIES WITHOUT BORDERS
+              </h2>
             </div>
           </div>
         </div>
@@ -539,6 +550,11 @@
         </div>
       </div>
     </main>
+    <script>
+      window.addEventListener("load", () => {
+          document.body.classList.add("page-loaded");
+      });
+    </script>
     <script src="output/bundle.js"></script>
   </body>
 </html>
