@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="output/main.min.css" />
   </head>
   <body>
-    <section class="service-slider-sec">
+    <section class="service-slider-sec desktop">
       <div class="container">
         <div class="row">
-          <div class="col-lg-5">
+          <div class="col-xxl-5 position-relative">
             <div class="service-title-slider swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -31,8 +31,9 @@
                 </div>
               </div>
             </div>
+            <div class="service-pagination"></div>
           </div>
-          <div class="col-lg-7">
+          <div class="col-xxl-7">
             <div class="service-slider swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -86,13 +87,109 @@
         </div>
       </div>
     </section>
-    <div class="custom-cursor" id="view-service-cursor">VIEW</div>
+
+    <!-- mobile responsive -->
+    <section class="service-slider-sec mobile">
+      <div class="container">
+        <div class="service-preview-slider-mob swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <h2 class="service-title text-center">MCDONALD'S</h2>
+              <figure class="service-image">
+                <img src="assets/images/service-1.png" alt="" />
+              </figure>
+              <p class="service-description">
+                McDonald’s re-imagines the iconic Golden Arches, brings back the
+                joy of play
+              </p>
+              <a href="">View</a>
+            </div>
+            <div class="swiper-slide">
+              <h2 class="service-title text-center">EMAAR</h2>
+              <figure class="service-image">
+                <img src="assets/images/service-2.jpg" alt="" />
+              </figure>
+              <p class="service-description">
+                Emaar announces record property sales of AED 35.1 billion (US$
+                9.5 billion) and EBITDA increased by 18%.
+              </p>
+              <a href="">View</a>
+            </div>
+            <div class="swiper-slide">
+              <h2 class="service-title text-center">P&G - Always</h2>
+              <figure class="service-image">
+                <img src="assets/images/service-3.jpg" alt="" />
+              </figure>
+              <p class="service-description">
+                Always x Nasiba Hafiz Launch The World’s ‘Coolest’ Fashion.
+              </p>
+              <a href="">View</a>
+            </div>
+            <div class="swiper-slide">
+              <h2 class="service-title text-center">Oraimo</h2>
+              <figure class="service-image">
+                <img src="assets/images/service-4.webp" alt="" />
+              </figure>
+              <p class="service-description">
+                Oraimo is a manufacturing firm that designs, develops, and
+                distributes smartwatches, power banks, audio, and other
+                accessories worldwide.
+              </p>
+              <a href="">View</a>
+            </div>
+            <div class="swiper-slide">
+              <h2 class="service-title text-center">KLAIM</h2>
+              <figure class="service-image">
+                <img src="assets/images/service-5.jpg" alt="" />
+              </figure>
+              <p class="service-description">
+                KLAIM expands its healthcare capital solution with $30m Knuru
+                deal.
+              </p>
+              <a href="">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-thumb-slider-mob swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <figure class="service-image">
+                <img src="assets/images/service-1.png" alt="" />
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="service-image">
+                <img src="assets/images/service-2.jpg" alt="" />
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="service-image">
+                <img src="assets/images/service-3.jpg" alt="" />
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="service-image">
+                <img src="assets/images/service-4.webp" alt="" />
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="service-image">
+                <img src="assets/images/service-5.jpg" alt="" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="custom-cursor d-lg-flex d-none" id="view-service-cursor">
+      VIEW
+    </div>
     <div class="btn-enquiry-wrap">
-      <button class="btn btn-green btn-enquiry btn-enquiry-popup no-hover-bg">
+      <button class="btn btn-primary btn-enquiry btn-enquiry-popup no-hover-bg">
         <img src="assets/icons/message.svg" alt="message-icon" />
         <div class="close-icon"></div>
       </button>
-      <div class="enquiry-tooltip green">Get in touch with us</div>
+      <div class="enquiry-tooltip">Get in touch with us</div>
     </div>
     <div
       class="enquiry-modal modal fade green"

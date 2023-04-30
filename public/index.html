@@ -47,9 +47,23 @@
             </button>
           </div>
         </div>
+        <!-- <div class="home-banner-video__frame d-lg-none">
+          <video
+            id="home-banner-video"
+            poster="assets/images/home-video-poster.png"
+            playsinline
+            muted
+            autoplay
+          >
+            <source src="assets/videos/home-video.mp4" type="video/mp4" />
+          </video>
+          <h2 class="home-banner-video__title">
+            TELLING STORIES WITHOUT BORDERS
+          </h2>
+        </div> -->
       </section>
       <!-- Section: Home Video -->
-      <section class="home-video">
+      <section class="home-video d-lg-block d-none">
         <div class="video-outer-wrap">
           <div class="video-wrap">
             <div class="home-video__frame">
@@ -191,7 +205,7 @@
       <!-- Section: Home Services -->
       <section class="home-services">
         <div class="container">
-          <div class="home-services__cards row">
+          <div class="home-services__cards row d-lg-flex d-none">
             <div class="col-lg-6">
               <div
                 class="service-card"
@@ -272,6 +286,84 @@
                     eget elementum iaculis.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-services__cards d-lg-none">
+            <div
+              class="service-card"
+              style="
+                --service-card-bg: #307470;
+                --service-card-text: #d1f386;
+                --service-title-width: 90%;
+              "
+            >
+              <div class="card-wrap">
+                <h2 class="service-card__title h2 fw-black">
+                  Press release distribution with guaranteed coverage in tier-1
+                  media publications
+                </h2>
+                <p class="service-card__description fs-20 fw-light mb-0">
+                  Lorem ipsum dolor sit amet consectetur. Massa urna justo enim
+                  tellus feugiat nullam. Vel molestie orci dui ac dolor eget
+                  elementum iaculis. Lorem eleifend sed.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-card columns-2"
+              style="
+                --service-card-bg: #ffc18e;
+                --service-card-text: #422b72;
+                --service-title-width: 37%;
+                --service-title-align: flex-start;
+              "
+            >
+              <div class="card-wrap">
+                <h2 class="service-card__title h2 fw-black">Hire a PR team</h2>
+                <p class="service-card__description fs-20 fw-light mb-0">
+                  Lorem ipsum dolor sit amet consectetur. Massa urna justo enim
+                  tellus feugiat nullam. Vel molestie orci dui ac dolor eget
+                  elementum iaculis. Lorem eleifend sed.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-card columns-2"
+              style="
+                --service-card-bg: #d1f386;
+                --service-card-text: #0e0f0c;
+                --service-title-width: 55%;
+                --service-title-align: flex-end;
+              "
+            >
+              <div class="card-wrap">
+                <h2 class="service-card__title h2 fw-black">
+                  Loyalty & Partnerships
+                </h2>
+                <p class="service-card__description fs-20 fw-light mb-0">
+                  Lorem ipsum dolor sit amet consectetur. Massa urna justo enim
+                  tellus feugiat nullam. Vel molestie.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-card"
+              style="
+                --service-card-bg: #ecc5fb;
+                --service-card-text: #810955;
+                --service-title-width: 50%;
+              "
+            >
+              <div class="card-wrap">
+                <h2 class="service-card__title h2 fw-black">
+                  Guaranteed coverage in tier-1 publications
+                </h2>
+                <p class="service-card__description fs-20 fw-light mb-0">
+                  Lorem ipsum dolor sit amet consectetur. Massa urna justo enim
+                  tellus feugiat nullam. Vel molestie orci dui ac dolor eget
+                  elementum iaculis.
+                </p>
               </div>
             </div>
           </div>
@@ -552,7 +644,7 @@
     </main>
     <script>
       window.addEventListener("load", () => {
-          document.body.classList.add("page-loaded");
+        document.body.classList.add("page-loaded");
       });
     </script>
     <script src="output/bundle.js"></script>

@@ -36,7 +36,7 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-window.onbeforeunload = () => {
+window.onload = () => {
   window.scrollTo(0, 0);
 };
 
@@ -169,7 +169,7 @@ if (isDesktop) {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
         // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-        document.querySelector('.home-video__title').classList.add('inView');
+        document.querySelector(".home-video__title").classList.add("inView");
       }, 300);
     },
     onLeave: () => {
@@ -177,14 +177,14 @@ if (isDesktop) {
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
       // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-        document.querySelector('.home-video__title').classList.remove('inView');
+      document.querySelector(".home-video__title").classList.remove("inView");
     },
     onEnterBack: () => {
       setTimeout(() => {
         homeVideo.play();
         homeVideoPoster.style.zIndex = -1;
         // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-        document.querySelector('.home-video__title').classList.add('inView');
+        document.querySelector(".home-video__title").classList.add("inView");
       }, 300);
     },
     onLeaveBack: () => {
@@ -192,7 +192,7 @@ if (isDesktop) {
       homeVideo.currentTime = 0;
       homeVideoPoster.style.zIndex = 2;
       // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-        document.querySelector('.home-video__title').classList.remove('inView');
+      document.querySelector(".home-video__title").classList.remove("inView");
     },
   });
 
@@ -216,11 +216,10 @@ if (isDesktop) {
     },
   });
 
-  // feature section
   gsap.from(".home-features__title", {
     scrollTrigger: {
       trigger: ".home-features__title",
-      start: "center center",
+      start: "bottom+=10% center",
       onEnter: () => {
         document.querySelector(".home-features__title").classList.add("inView");
       },
@@ -232,6 +231,7 @@ if (isDesktop) {
     },
   });
 
+  // feature section
   gsap.utils
     .toArray(".home-features__slider.slider-desk .swiper-wrapper")
     .forEach((container) => {
@@ -264,6 +264,39 @@ if (isDesktop) {
       tlFeatures.set({}, { delay: 1 });
     });
 
+  const serviceSliderSec = document.querySelector(".service-slider-sec");
+  setTimeout(() => {
+    ScrollTrigger.create({
+      trigger: serviceSliderSec,
+      start: "top+=33 bottom-=117",
+      end: `+=${serviceSliderSec?.closest(".pin-spacer")?.offsetHeight}`,
+      onEnter: () => {
+        document.querySelector(".btn-enquiry").classList.remove("btn-primary");
+        document.querySelector(".btn-enquiry").classList.add("btn-green");
+        document.querySelector(".enquiry-tooltip").classList.add("green");
+        document.querySelector(".enquiry-modal").classList.add("green");
+      },
+      onLeave: () => {
+        document.querySelector(".btn-enquiry").classList.add("btn-primary");
+        document.querySelector(".btn-enquiry").classList.remove("btn-green");
+        document.querySelector(".enquiry-tooltip").classList.remove("green");
+        document.querySelector(".enquiry-modal").classList.remove("green");
+      },
+      onEnterBack: () => {
+        document.querySelector(".btn-enquiry").classList.remove("btn-primary");
+        document.querySelector(".btn-enquiry").classList.add("btn-green");
+        document.querySelector(".enquiry-tooltip").classList.add("green");
+        document.querySelector(".enquiry-modal").classList.add("green");
+      },
+      onLeaveBack: () => {
+        document.querySelector(".btn-enquiry").classList.add("btn-primary");
+        document.querySelector(".btn-enquiry").classList.remove("btn-green");
+        document.querySelector(".enquiry-tooltip").classList.remove("green");
+        document.querySelector(".enquiry-tooltip").classList.remove("green");
+      },
+    });
+  }, 100);
+
   // Service Slider
   const serviceSlider = document.querySelector(".service-slider");
   if (serviceSlider) {
@@ -275,7 +308,7 @@ if (isDesktop) {
           scrollTrigger: {
             trigger: container.closest("section"),
             start: "center center",
-            end: `+=${container.offsetWidth * 3}`,
+            end: `+=${container.offsetWidth * 6}`,
             anticipatePin: 1,
             scrub: true,
             force3D: true,

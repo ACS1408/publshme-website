@@ -15,6 +15,11 @@
                 margin-bottom: size(30);
             }
         }
+        &--image {
+            img {
+                height: 32px;
+            }
+        }
     }
     .brand-slide {
         background-color: $theme-brand-card-bg;
