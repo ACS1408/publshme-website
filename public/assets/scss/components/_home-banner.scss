@@ -8,7 +8,7 @@
         flex-direction: column;
     }
     > .container {
-        @include min(1600) {
+        @include min(1200) {
             margin-top: -45px;
         }
     }
@@ -17,7 +17,7 @@
         color: $text-color;
         font-weight: $fw-black;
         margin-bottom: 8px;
-        @include lineHeight(64, 72);
+        @include lineHeight(64, 64);
         @include min(1600) {
             @include lineHeight(120, 120);
             margin-bottom: size(20);
