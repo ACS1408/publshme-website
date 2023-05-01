@@ -80,6 +80,21 @@ window.addEventListener("load", () => {
   }, 5000);
 });
 
+window.onscroll = () => {
+  if (
+    window.innerHeight + Math.round(window.scrollY) >=
+    document.body.offsetHeight - 300
+  ) {
+    document
+      .querySelector(".btn-enquiry-wrap")
+      .classList.add("btn-enquiry-hide");
+  } else {
+    document
+      .querySelector(".btn-enquiry-wrap")
+      .classList.remove("btn-enquiry-hide");
+  }
+};
+
 if (isDesktop) {
   gsap.registerPlugin(ScrollTrigger);
 

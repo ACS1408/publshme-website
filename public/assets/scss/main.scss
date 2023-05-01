@@ -315,11 +315,13 @@ ul {
 // }
 
 .btn-enquiry {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   padding: 0;
   @include min(992) {
+    width: 80px;
+    height: 80px;
     opacity: 0;
     transform: translateY(20px);
     transform-origin: center;
@@ -333,12 +335,14 @@ ul {
   }
   &-wrap {
     position: fixed;
-    bottom: 100px;
-    right: 20px;
     z-index: 1061;
-    @include min(992) {
-      bottom: 85px;
-      right: 64px;
+    transition: 0.3s ease all;
+    bottom: 20px;
+    right: 20px;
+    &.btn-enquiry-hide {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
     }
     img {
       transform: scale(1);
@@ -378,6 +382,7 @@ ul {
       transform: translate(-95%, -50%);
       background-color: $primary-color;
       opacity: 0;
+      visibility: hidden;
       padding: 15px 20px;
       border-radius: 10px;
       font-size: size(18);
@@ -610,7 +615,8 @@ body {
 .copyrights-mob {
   p {
     @include max(424.98) {
-      font-size: size(12) !important;
+      font-size: size(15) !important;
+      padding: 0 10px;
     }
   }
 }

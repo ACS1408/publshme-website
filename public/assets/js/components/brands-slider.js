@@ -13,7 +13,7 @@ const brandsSlider = () => {
       disableOnInteraction: false,
     },
     allowTouchMove: false,
-    speed: 5000,
+    speed: 2000,
     loop: true,
   });
   var brandsSliderBottom = new Swiper(".home-brands__slider.brands-bottom", {
@@ -25,7 +25,7 @@ const brandsSlider = () => {
       reverseDirection: true,
     },
     allowTouchMove: false,
-    speed: 5000,
+    speed: 12000,
     loop: true,
   });
   return { brandsSliderTop, brandsSliderBottom };

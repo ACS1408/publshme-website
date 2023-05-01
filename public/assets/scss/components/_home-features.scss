@@ -6,7 +6,6 @@
         }
     }
     .section-inner {
-        min-height: 100vh;
         padding: size(60) 0 size(30);
         overflow: hidden;
         background-color: $bg-orange;
@@ -16,6 +15,7 @@
         align-items: center;
         border-radius: 24px;
         @include min(992) {
+            min-height: 100vh;
             border-radius: 64px;
         }
     }
