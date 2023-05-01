@@ -93,38 +93,44 @@ if (isDesktop) {
   });
 
   gsap.ticker.fps(60);
-  gsap.utils.toArray(".home-banner__title .wordInner").forEach((word, i) => {
-    gsap.to(word, {
-      y: 0,
-      duration: 0.4,
-      ease: "Sine.easeOut",
-      scaleY: 1,
-      onComplete: () => {
-        gsap.to(".home-banner__description > *", {
-          y: 0,
-          duration: 0.4,
-          ease: "Sine.easeOut",
-          opacity: 1,
-          delay: 0.8,
-          onComplete: () => {
-            gsap.to(".banner-btn > *", {
-              y: 0,
-              duration: 0.4,
-              ease: "Sine.easeOut",
-              opacity: 1,
-              onComplete: () => {
-                gsap.to(".home-video .video-outer-wrap", {
-                  y: 0,
-                  duration: 0.5,
-                  ease: "Sine.easeOut",
-                  opacity: 1,
-                });
-              },
-            });
-          },
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      gsap.utils
+        .toArray(".home-banner__title .wordInner")
+        .forEach((word, i) => {
+          gsap.to(word, {
+            y: 0,
+            duration: 0.4,
+            ease: "Sine.easeOut",
+            scaleY: 1,
+            onComplete: () => {
+              gsap.to(".home-banner__description > *", {
+                y: 0,
+                duration: 0.4,
+                ease: "Sine.easeOut",
+                opacity: 1,
+                delay: 0.8,
+                onComplete: () => {
+                  gsap.to(".banner-btn > *", {
+                    y: 0,
+                    duration: 0.4,
+                    ease: "Sine.easeOut",
+                    opacity: 1,
+                    onComplete: () => {
+                      gsap.to(".home-video .video-outer-wrap", {
+                        y: 0,
+                        duration: 0.5,
+                        ease: "Sine.easeOut",
+                        opacity: 1,
+                      });
+                    },
+                  });
+                },
+              });
+            },
+          });
         });
-      },
-    });
+    }, 500);
   });
 
   gsap.to(".btn-enquiry", {
@@ -143,58 +149,49 @@ if (isDesktop) {
     },
   });
 
-  // gsap.utils.toArray(".text-reveal").forEach((elem) => {
-  //   ScrollTrigger.create({
-  //     trigger: 'text-reveal',
-  //     start: "top center",
-  //     end: "bottom center",
-  //     toggleClass: 'inView',
-  //     once: true,
-  //     markers: true
-  //   });
-  // });
-
   // video section
   const homeVideo = document.getElementById("home-video");
   const homeVideoPoster = document.querySelector(".home-video__poster");
-  ScrollTrigger.create({
-    trigger: ".home-video",
-    start: "32% center",
-    end: "bottom+=50% top",
-    anticipatePin: 1,
-    pin: ".home-video",
-    toggleClass: "section-in",
-    onEnter: () => {
-      setTimeout(() => {
-        homeVideo.play();
-        homeVideoPoster.style.zIndex = -1;
+  if (homeVideo) {
+    ScrollTrigger.create({
+      trigger: ".home-video",
+      start: "32% center",
+      end: "bottom+=50% top",
+      anticipatePin: 1,
+      pin: ".home-video",
+      toggleClass: "section-in",
+      onEnter: () => {
+        setTimeout(() => {
+          homeVideo.play();
+          homeVideoPoster.style.zIndex = -1;
+          // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
+          document.querySelector(".home-video__title").classList.add("inView");
+        }, 300);
+      },
+      onLeave: () => {
+        homeVideo.pause();
+        homeVideo.currentTime = 0;
+        homeVideoPoster.style.zIndex = 2;
         // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-        document.querySelector(".home-video__title").classList.add("inView");
-      }, 300);
-    },
-    onLeave: () => {
-      homeVideo.pause();
-      homeVideo.currentTime = 0;
-      homeVideoPoster.style.zIndex = 2;
-      // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-      document.querySelector(".home-video__title").classList.remove("inView");
-    },
-    onEnterBack: () => {
-      setTimeout(() => {
-        homeVideo.play();
-        homeVideoPoster.style.zIndex = -1;
+        document.querySelector(".home-video__title").classList.remove("inView");
+      },
+      onEnterBack: () => {
+        setTimeout(() => {
+          homeVideo.play();
+          homeVideoPoster.style.zIndex = -1;
+          // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+          document.querySelector(".home-video__title").classList.add("inView");
+        }, 300);
+      },
+      onLeaveBack: () => {
+        homeVideo.pause();
+        homeVideo.currentTime = 0;
+        homeVideoPoster.style.zIndex = 2;
         // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-        document.querySelector(".home-video__title").classList.add("inView");
-      }, 300);
-    },
-    onLeaveBack: () => {
-      homeVideo.pause();
-      homeVideo.currentTime = 0;
-      homeVideoPoster.style.zIndex = 2;
-      // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-      document.querySelector(".home-video__title").classList.remove("inView");
-    },
-  });
+        document.querySelector(".home-video__title").classList.remove("inView");
+      },
+    });
+  }
 
   // about section
   // const title = document.querySelector(".home-about__title");
@@ -206,30 +203,34 @@ if (isDesktop) {
   // const wrappedText = `<span class="terminal-letters left">${matches[1]} </span><span id="pos-o-letter">${matches[2]}</span><span class="terminal-letters right"> ${matches[3]}</span>`;
   // title.innerHTML = wrappedText;
 
-  gsap.from(".home-about__title", {
-    scrollTrigger: {
-      trigger: ".home-about__title",
-      start: "top bottom-=10%",
-      onEnter: () => {
-        document.querySelector(".home-about__title").classList.add("inView");
+  const aboutTitle = document.querySelector(".home-about__title");
+  if (aboutTitle) {
+    gsap.from(aboutTitle, {
+      scrollTrigger: {
+        trigger: aboutTitle,
+        start: "top bottom-=10%",
+        onEnter: () => {
+          aboutTitle.classList.add("inView");
+        },
       },
-    },
-  });
+    });
+  }
 
-  gsap.from(".home-features__title", {
-    scrollTrigger: {
-      trigger: ".home-features__title",
-      start: "bottom+=10% center",
-      onEnter: () => {
-        document.querySelector(".home-features__title").classList.add("inView");
+  const featureTitle = document.querySelector(".home-features__title");
+  if (featureTitle) {
+    gsap.from(featureTitle, {
+      scrollTrigger: {
+        trigger: featureTitle,
+        start: "bottom+=10% center",
+        onEnter: () => {
+          featureTitle.classList.add("inView");
+        },
+        onLeaveBack: () => {
+          featureTitle.classList.remove("inView");
+        },
       },
-      onLeaveBack: () => {
-        document
-          .querySelector(".home-features__title")
-          .classList.remove("inView");
-      },
-    },
-  });
+    });
+  }
 
   // feature section
   gsap.utils
@@ -377,4 +378,33 @@ if (isDesktop) {
       }
     });
   }
+
+  gsap.utils.toArray(".anim-fade-up").forEach((elem) => {
+    ScrollTrigger.create({
+      trigger: elem,
+      start: "top bottom-=30%",
+      onEnter: () => {
+        elem.classList.add("visible");
+      },
+    });
+  });
+
+  gsap.utils.toArray(".parallax-obj").forEach((obj, i) => {
+    gsap.fromTo(
+      obj,
+      {
+        yPercent: 10,
+      },
+      {
+        yPercent: -5,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: obj,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+  });
 }

@@ -619,3 +619,16 @@ body {
 .premium-blog-thumbnail-container {
   @include aspectRatio(361, 434);
 }
+
+.anim-fade-up {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(25px);
+  transition-delay: 1s;
+  will-change: transform, opacity;
+  transition: 0.43s ease-in-out all;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -20,7 +20,7 @@
         @include lineHeight(64, 72);
         @include min(1600) {
             @include lineHeight(120, 120);
-            margin-bottom: size(10);
+            margin-bottom: size(20);
         }
         .word {
             overflow: hidden;
