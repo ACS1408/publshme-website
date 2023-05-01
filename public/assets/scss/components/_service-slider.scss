@@ -54,15 +54,14 @@
         bottom: unset !important;
         transform: translateX(0) !important;
         --swiper-pagination-color: #{$quinary-color};
-        --swiper-pagination-bullet-horizontal-gap: 5px;
         @include min(1420) {
-            bottom: 20% !important;
-            left: -15px !important;
+            bottom: 0 !important;
+            left: 10px !important;
             top: unset !important;
         }
         .swiper-pagination-bullet {
-            width: 6px;
-            height: 30px;
+            width: 10px;
+            height: 10px;
             border-radius: 6px;
         }
     }

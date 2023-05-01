@@ -7,7 +7,7 @@
     }
     .section-inner {
         min-height: 100vh;
-        padding: size(30) 0;
+        padding: size(60) 0 size(30);
         overflow: hidden;
         background-color: $bg-orange;
         transition: 0.5s ease-in-out border-radius;
@@ -23,7 +23,7 @@
         color: $title-dark;
         @include max(991.98) {
             font-size: size(48) !important;
-            margin-bottom: size(40);
+            margin-bottom: size(30);
         }
         .word {
             overflow: hidden;
@@ -101,5 +101,10 @@
                 }
             }
         }
+    }
+    .publsh-pagination {
+        text-align: center;
+        margin-top: 10px;
+        --swiper-pagination-color: #{$primary-color};
     }
 }

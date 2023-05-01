@@ -5,13 +5,16 @@ const publshSlider = () => {
   var featureSlider = new Swiper(".home-features__slider.slider-desk", {
     slidesPerView: "auto",
     spaceBetween: 40,
-    allowTouchMove: true
+    allowTouchMove: true,
   });
   var featureSliderMob = new Swiper(".home-features__slider.slider-mob", {
     slidesPerView: "auto",
     spaceBetween: 40,
     allowTouchMove: true,
-    freeMode: true
+    freeMode: true,
+    pagination: {
+      el: ".publsh-pagination",
+    },
   });
   return { featureSlider, featureSliderMob };
 };
