@@ -21,6 +21,7 @@
     }
     &__title {
         color: $title-dark;
+        font-family: $ff-primary;
         @include max(991.98) {
             font-size: size(48) !important;
             margin-bottom: size(30);
