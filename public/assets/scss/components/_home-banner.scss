@@ -22,6 +22,9 @@
             @include lineHeight(120, 120);
             margin-bottom: size(20);
         }
+        @include max(575.98) {
+            font-size: size(36) !important;
+        }
         .word {
             overflow: hidden;
             display: inline-block;

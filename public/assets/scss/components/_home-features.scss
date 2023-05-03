@@ -21,9 +21,12 @@
     }
     &__title {
         color: $title-dark;
-        @include max(991.98) {
+        @include min-max(576, 991.98) {
             font-size: size(48) !important;
             margin-bottom: size(30);
+        }
+        @include max(575.98) {
+            font-size: size(38) !important;
         }
         .word {
             overflow: hidden;
@@ -43,9 +46,11 @@
         }
     }
     &__slider {
+        &.swiper {
+            overflow: visible;
+        }
         @include min(992) {
             &.swiper {
-                overflow: visible;
                 .swiper-wrapper {
                     align-items: flex-end;
                     transition: 0.8s cubic-bezier(0.53, 0.03, 0.22, 0.37) transform !important;

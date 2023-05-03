@@ -8,8 +8,8 @@ const publshSlider = () => {
     allowTouchMove: true,
   });
   var featureSliderMob = new Swiper(".home-features__slider.slider-mob", {
-    slidesPerView: "auto",
-    spaceBetween: 40,
+    slidesPerView: 1.1,
+    spaceBetween: 15,
     allowTouchMove: true,
     freeMode: true,
     pagination: {

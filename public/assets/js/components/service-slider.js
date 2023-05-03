@@ -25,6 +25,7 @@ const serviceSlider = () => {
     effect: "fade",
     pagination: {
       el: ".service-pagination",
+      clickable: true,
       // dynamicBullets: true,
     },
   });
