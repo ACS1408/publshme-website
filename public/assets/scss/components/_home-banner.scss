@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 140px;
     @include max(991.98) {
         flex-direction: column;
     }
@@ -120,9 +121,26 @@
     @include min(992) {
         + .pin-spacer {
             background-color: $secondary-color;
+            z-index: 3 !important;
             + .pin-spacer {
                 background-color: $secondary-color;
+                z-index: 2 !important;
             }
         }
     }
+}
+
+body.rm-bg{
+    background-color: var(--bg-grey);
+    .home-banner{
+        @include min(992) {
+            + .pin-spacer {
+               background-color: transparent;
+               > section{
+                background-color: transparent;
+               }
+            }
+        }
+    }
+    
 }

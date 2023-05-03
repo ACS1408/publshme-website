@@ -1,8 +1,16 @@
 .home-about {
     background-color: $bg-grey;
     padding: size(64) 0;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+    }
+
     @include min(992) {
         padding: size(120) 0;
+        // padding-top: 800px;
+        display: flex;
         // height: 100vh;
         // display: flex;
         // align-items: center;
@@ -10,6 +18,29 @@
     &__title {
         font-family: $ff-primary !important;
         font-weight: $fw-medium !important;
+        @include min(992) {
+            font-size: 200px !important;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            transition: 0.3s opacity ease-in-out;
+            transform-origin: left;
+            &.hide {
+                opacity: 0 !important;
+            }
+            .whitespace {
+                width: 30px;
+            }
+        }
+        @include max(991.98) {
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
         .word {
             overflow: hidden;
             display: inline-block;
@@ -57,5 +88,28 @@
     }
     &__description {
         @include lineHeight(20, 40);
+    }
+}
+
+.rm-bg {
+    .home-about__title {
+        opacity: 1;
+    }
+}
+
+.who-image {
+    width: 225px;
+    height: 225px;
+    position: relative;
+    clip-path: circle(44% at 50% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    figure {
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
 }

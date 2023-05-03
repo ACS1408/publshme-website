@@ -98,14 +98,16 @@ window.addEventListener("load", () => {
 if (isDesktop) {
   gsap.registerPlugin(ScrollTrigger);
 
-  ScrollTrigger.create({
-    trigger: ".home-banner",
-    start: "center top+=30%",
-    end: "bottom top",
-    onEnter: () => {
-      lenis.scrollTo(".home-video");
-    },
-  });
+  // #FIXME uncomment this
+
+  // ScrollTrigger.create({
+  //   trigger: ".home-banner",
+  //   start: "center top+=30%",
+  //   end: "bottom top",
+  //   onEnter: () => {
+  //     lenis.scrollTo(".home-video");
+  //   },
+  // });
 
   gsap.ticker.fps(60);
   window.addEventListener("load", () => {
@@ -167,45 +169,205 @@ if (isDesktop) {
   // video section
   const homeVideo = document.getElementById("home-video");
   const homeVideoPoster = document.querySelector(".home-video__poster");
+  // if (homeVideo) {
+  //   ScrollTrigger.create({
+  //     trigger: ".home-video",
+  //     start: "32% center",
+  //     end: "bottom+=50% top",
+  //     anticipatePin: 1,
+  //     pin: ".home-video",
+  //     toggleClass: "section-in",
+  //     onEnter: () => {
+  //       setTimeout(() => {
+  //         homeVideo.play();
+  //         homeVideoPoster.style.zIndex = -1;
+  //         // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
+  //         document.querySelector(".home-video__title").classList.add("inView");
+  //       }, 300);
+  //     },
+  //     onLeave: () => {
+  //       homeVideo.pause();
+  //       homeVideo.currentTime = 0;
+  //       homeVideoPoster.style.zIndex = 2;
+  //       // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
+  //       document.querySelector(".home-video__title").classList.remove("inView");
+  //     },
+  //     onEnterBack: () => {
+  //       setTimeout(() => {
+  //         homeVideo.play();
+  //         homeVideoPoster.style.zIndex = -1;
+  //         // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+  //         document.querySelector(".home-video__title").classList.add("inView");
+  //       }, 300);
+  //     },
+  //     onLeaveBack: () => {
+  //       homeVideo.pause();
+  //       homeVideo.currentTime = 0;
+  //       homeVideoPoster.style.zIndex = 2;
+  //       // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
+  //       document.querySelector(".home-video__title").classList.remove("inView");
+  //     },
+  //   });
+  // }
+
+  // #FIXME this is new section js
+  const bannerHeight =
+    document.querySelectorAll(".home-banner")[0].clientHeight;
+  const videoWrapper = document.querySelectorAll(".home-video__frame")[0];
+  const videoMainWrapper = document.querySelectorAll(".video-outer-wrap")[0];
+  const aboutWrapper = document.querySelectorAll(".home-about")[0];
+  const titleMain = document.querySelectorAll(".home-about__title")[0];
+
+  // setTimeout(() => {
+  //   const titleMain = document.querySelectorAll('.home-about__title')[0];
+  //   titleMain.style.cssText += `left:${((window.innerWidth / 2) - (titleMain.clientWidth)) / 2}px; position:fixed;  top:${(window.innerHeight/ 2 - (titleMain.clientHeight / 2))}px;`;
+
+  // }, 400);
+
+  console.log(videoMainWrapper.clientHeight);
+  aboutWrapper.style.marginTop = `-${videoMainWrapper.clientHeight}px`;
+
   if (homeVideo) {
-    ScrollTrigger.create({
-      trigger: ".home-video",
-      start: "32% center",
-      end: "bottom+=50% top",
+    const trigger = ScrollTrigger.create({
+      trigger: ".video-outer-wrap",
+      start: `top top`,
+      end: `bottom+=${videoMainWrapper.clientHeight * 2.6}px top`,
       anticipatePin: 1,
       pin: ".home-video",
-      toggleClass: "section-in",
-      onEnter: () => {
-        setTimeout(() => {
-          homeVideo.play();
-          homeVideoPoster.style.zIndex = -1;
-          // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-          document.querySelector(".home-video__title").classList.add("inView");
-        }, 300);
-      },
-      onLeave: () => {
-        homeVideo.pause();
-        homeVideo.currentTime = 0;
-        homeVideoPoster.style.zIndex = 2;
-        // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-        document.querySelector(".home-video__title").classList.remove("inView");
-      },
-      onEnterBack: () => {
-        setTimeout(() => {
-          homeVideo.play();
-          homeVideoPoster.style.zIndex = -1;
-          // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-          document.querySelector(".home-video__title").classList.add("inView");
-        }, 300);
-      },
-      onLeaveBack: () => {
-        homeVideo.pause();
-        homeVideo.currentTime = 0;
-        homeVideoPoster.style.zIndex = 2;
-        // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-        document.querySelector(".home-video__title").classList.remove("inView");
+      // toggleClass: "section-in",
+      // markers: true,
+    });
+
+    //set clip amount
+    gsap.set(videoWrapper, { clipPath: `circle(44vh)` });
+
+    //initial clip size increase
+    let clip_image = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".video-outer-wrap",
+        start: `top top`,
+        end: `top+=${videoMainWrapper.clientHeight}px top`,
+        markers: true,
+        scrub: true,
+        onEnterBack: () => {
+          document.querySelector("body").classList.remove("rm-bg");
+        },
       },
     });
+    clip_image.fromTo(
+      videoWrapper,
+      { clipPath: `circle(44vh)` },
+      { clipPath: "circle(110vh)", duration: 1.5 }
+    );
+    //initial text revealing
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".video-outer-wrap",
+        start: `top+=${videoMainWrapper.clientHeight * 0.9}px  top`,
+        end: `top+=${videoMainWrapper.clientHeight * 1.5}px top`,
+        markers: true,
+        scrub: true,
+        onUpdate: (e) => {
+          if (e.progress > 0 && e.progress < 1) {
+            document
+              .querySelector(".home-video__title")
+              .classList.add("inView");
+          } else {
+            document
+              .querySelector(".home-video__title")
+              .classList.remove("inView");
+          }
+        },
+      },
+    });
+
+    //initial clip size decrease
+    let clip_image_rev = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".video-outer-wrap",
+        start: `top+=${videoMainWrapper.clientHeight * 1.4}px  top`,
+        end: `top+=${videoMainWrapper.clientHeight * 2}px top`,
+        scrub: true,
+        markers: true,
+        onEnter: () => {
+          document.querySelector("body").classList.add("rm-bg");
+        },
+      },
+    });
+    clip_image_rev.to(videoWrapper, { clipPath: "circle(44%)", duration: 1.5 });
+
+    setTimeout(() => {
+      const mainTitle = document
+        .querySelectorAll(".main-title span")[0]
+        .getBoundingClientRect();
+      const containerLeft = document
+        .querySelectorAll(".home-about .container")[0]
+        .getBoundingClientRect();
+      let clip_image_scale = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".video-outer-wrap",
+          start: `top+=${videoMainWrapper.clientHeight * 2}px  top`,
+          end: `top+=${videoMainWrapper.clientHeight * 3}px top`,
+          scrub: true,
+          markers: true,
+        },
+      });
+      clip_image_scale.to(videoWrapper, {
+        width: `225px`,
+        height: `225px`,
+        left: `${Math.round(mainTitle.left)}px`,
+        onComplete: () => videoWrapper.classList.add("hide"),
+        translate: `0% , -50%`,
+      });
+
+      // let text_movement = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: '.home-about',
+      //     start: `top+=20% top`,
+      //     end: "bottom-=30% center",
+      //     scrub: true,
+      //     // markers: true,
+      //   }
+      // });
+      clip_image_scale.to(".home-about__title", {
+        scale: 0.35,
+        left: `${
+          containerLeft.left +
+          document.querySelectorAll(".home-about__title")[0].clientWidth / 2
+        }px`,
+        duration: 1.6,
+        onReverseComplete: () => videoWrapper.classList.remove("hide"),
+      });
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".home-about",
+          start: `bottom-=50% 30%`,
+          end: "bottom bottom",
+          scrub: true,
+          markers: true,
+          onUpdate: (e) => {
+            console.log(e.progress);
+            if (e.progress === 1) {
+              document
+                .querySelector(".home-about__title")
+                .classList.add("hide");
+            } else {
+              document
+                .querySelector(".home-about__title")
+                .classList.remove("hide");
+            }
+          },
+        },
+      });
+    }, 10);
+
+    // console.log(mainTitle.left);
+
+    setTimeout(() => {
+      trigger.refresh();
+    }, 1000);
   }
 
   // about section
