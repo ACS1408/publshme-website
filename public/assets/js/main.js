@@ -247,7 +247,7 @@ if (isDesktop) {
         trigger: ".video-outer-wrap",
         start: `top top`,
         end: `top+=${videoMainWrapper.clientHeight}px top`,
-        markers: true,
+        // markers: true,
         scrub: true,
         onEnterBack: () => {
           document.querySelector("body").classList.remove("rm-bg");
@@ -266,7 +266,7 @@ if (isDesktop) {
         trigger: ".video-outer-wrap",
         start: `top+=${videoMainWrapper.clientHeight * 0.9}px  top`,
         end: `top+=${videoMainWrapper.clientHeight * 1.5}px top`,
-        markers: true,
+        // markers: true,
         scrub: true,
         onUpdate: (e) => {
           if (e.progress > 0 && e.progress < 1) {
@@ -289,7 +289,7 @@ if (isDesktop) {
         start: `top+=${videoMainWrapper.clientHeight * 1.4}px  top`,
         end: `top+=${videoMainWrapper.clientHeight * 2}px top`,
         scrub: true,
-        markers: true,
+        // markers: true,
         onEnter: () => {
           document.querySelector("body").classList.add("rm-bg");
         },
@@ -310,7 +310,7 @@ if (isDesktop) {
           start: `top+=${videoMainWrapper.clientHeight * 2}px  top`,
           end: `top+=${videoMainWrapper.clientHeight * 3}px top`,
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       });
       clip_image_scale.to(videoWrapper, {
@@ -346,7 +346,7 @@ if (isDesktop) {
           start: `bottom-=50% 30%`,
           end: "bottom bottom",
           scrub: true,
-          markers: true,
+          // markers: true,
           onUpdate: (e) => {
             console.log(e.progress);
             if (e.progress === 1) {
