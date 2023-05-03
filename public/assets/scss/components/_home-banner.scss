@@ -1,17 +1,18 @@
 .home-banner {
     background-color: $secondary-color;
-    min-height: 100svh;
+    // min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 140px;
     @include max(991.98) {
         flex-direction: column;
     }
-    > .container {
-        @include min(1200) {
-            margin-top: -45px;
-        }
-    }
+    // > .container {
+    //     @include min(1200) {
+    //         margin-top: -45px;
+    //     }
+    // }
     &__title {
         font-family: $ff-primary !important;
         color: $text-color;
