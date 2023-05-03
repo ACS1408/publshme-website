@@ -177,7 +177,10 @@
 
 // mobile responsive
 .service-preview-slider-mob {
-    margin-bottom: size(69);
+    margin-bottom: size(30);
+    @include min(992) {
+        margin-bottom: size(69);
+    }
     .swiper-slide {
         &:not(.swiper-slide-active) {
             opacity: 0 !important;
