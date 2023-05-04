@@ -76,6 +76,7 @@
                 playsinline
                 muted
                 autoplay
+                loop
               >
                 <source src="assets/videos/home-video.mp4" type="video/mp4" />
               </video>
@@ -94,12 +95,14 @@
               <h2
                 class="home-about__title pos-adjust main-title d-lg-flex d-none"
               >
-                WH<span class="who-image"
-                  ><figure class="home-video__poster d-lg-block d-none">
-                    <img
+                WH<span class="who-image">
+                  <figure class="home-video__poster d-lg-block d-none">
+                    <!-- <img
                       src="assets/images/home-video-poster.png"
                       alt=""
-                    /></figure
+                    /> -->
+                    <video src="assets/videos/home-video.mp4" poster="assets/images/home-video-poster.png" autoplay muted playsinline loop></video>
+                    </figure
                 ></span>
                 WE ARE
               </h2>
@@ -982,7 +985,7 @@
                       class="form-control"
                     />
                   </div>
-                  <div class="form-group">
+                  <div class="form-group phone-number">
                     <label for="enquiry-phone" class="form-label"
                       >Phone number</label
                     >

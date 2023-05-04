@@ -14,6 +14,7 @@ const publshSlider = () => {
     freeMode: true,
     pagination: {
       el: ".publsh-pagination",
+      clickable: true
     },
   });
   return { featureSlider, featureSliderMob };

@@ -106,7 +106,7 @@
             height: 100%;
             position: absolute;
             @include min(992) {
-                opacity: 0;
+                // opacity: 0;
                 background-color: #000;
                 transition: 0.8s ease-in-out opacity;
             }

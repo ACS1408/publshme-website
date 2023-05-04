@@ -473,7 +473,7 @@ body {
     border-radius: 32px;
     padding: size(40) size(25);
     @include min(992) {
-      padding: size(64);
+      padding: size(45);
     }
     @include max(680, height) {
       padding: size(40);
@@ -516,8 +516,9 @@ body {
   }
   &__title {
     color: $white;
-    margin-bottom: size(24);
+    margin-bottom: size(10);
     text-align: center;
+    font-size: size(34);
     .golden-text {
       color: $quinary-color;
     }
@@ -532,7 +533,7 @@ body {
       padding: 18px 64.5px !important;
       display: block !important;
       margin-top: size(50) !important;
-      margin-bottom: size(24) !important;
+      margin-bottom: size(10) !important;
       font-family: $ff-primary !important;
       @include max(680, height) {
         margin-top: size(35) !important;
@@ -549,6 +550,11 @@ body {
   position: relative;
   padding-top: size(16);
   height: 60px;
+  &.phone-number {
+    label {
+      left: 110px;
+    }
+  }
   .form-label {
     color: $white;
     font-size: size(18);
@@ -586,7 +592,7 @@ body {
   &.focused {
     .form-label {
       font-size: size(14);
-      transform: translateY(-130%);
+      transform: translateY(-105%);
     }
   }
 }
@@ -642,4 +648,30 @@ body {
       transform: translateY(0);
     }
   }
+}
+
+.wpcf7-form-control.wpcf7-checkbox {
+  .wpcf7-list-item {
+    margin-left: 0 !important;
+  }
+}
+
+.iti-flag {
+  transform: scale(1.2) !important;
+}
+.flag-container{
+  padding-bottom: 12px !important;
+}
+.selected-flag {
+  + .wpcf7-form-control {
+    padding-bottom: 14px !important;
+  }
+}
+
+.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-quinary.w-100.btn-border {
+  margin-bottom: 8px !important;
+  margin-top: 10px !important;
+}
+.wpcf7-phonetext {
+  transform: translateY(-3px);
 }

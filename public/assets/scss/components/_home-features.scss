@@ -49,6 +49,11 @@
         &.swiper {
             overflow: visible;
         }
+        .swiper-slide {
+            @include max(991.98) {
+                height: auto !important;
+            }
+        }
         @include min(992) {
             &.swiper {
                 .swiper-wrapper {
@@ -63,9 +68,10 @@
             padding: size(40);
             @include max(991.98) {
                 min-height: 507px;
+                height: 100% !important;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-start;
             }
             &:not(:last-child) {
                 margin-bottom: size(40);

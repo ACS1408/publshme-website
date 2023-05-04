@@ -100,14 +100,14 @@ if (isDesktop) {
 
   // #FIXME uncomment this
 
-  // ScrollTrigger.create({
-  //   trigger: ".home-banner",
-  //   start: "center top+=30%",
-  //   end: "bottom top",
-  //   onEnter: () => {
-  //     lenis.scrollTo(".home-video");
-  //   },
-  // });
+  ScrollTrigger.create({
+    trigger: ".home-banner",
+    start: "center top+=30%",
+    end: "bottom top",
+    onEnter: () => {
+      lenis.scrollTo(".home-video");
+    },
+  });
 
   gsap.ticker.fps(60);
   window.addEventListener("load", () => {
