@@ -1,7 +1,7 @@
 @import "./root";
 
 @import "./variables";
-@import "./utilities";
+// @import "./utilities";
 @import "./mixins";
 
 // Bootstrap scss-docs-start import-stack
@@ -44,7 +44,7 @@
 // @import "../../../node_modules/bootstrap/scss/offcanvas";
 
 // Helpers
-@import "../../../node_modules/bootstrap/scss/helpers";
+// @import "../../../node_modules/bootstrap/scss/helpers";
 
 // Utilities
 @import "../../../node_modules/bootstrap/scss/utilities/api";
@@ -83,20 +83,20 @@ body {
   }
 }
 
-.modal {
-  @include min(992) {
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $primary-color;
-      border-radius: 40px;
-    }
-  }
-}
+// .modal {
+//   @include min(992) {
+//     &::-webkit-scrollbar {
+//       width: 8px;
+//     }
+//     &::-webkit-scrollbar-track {
+//       box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//     }
+//     &::-webkit-scrollbar-thumb {
+//       background-color: $primary-color;
+//       border-radius: 40px;
+//     }
+//   }
+// }
 
 @include min(992) {
   .lenis.lenis-smooth {
@@ -165,25 +165,25 @@ input:-webkit-autofill:focus ~ button {
   color: #fff;
 }
 
-button {
-  &.default {
-    background-color: transparent;
-    border: none;
-  }
-}
+// button {
+//   &.default {
+//     background-color: transparent;
+//     border: none;
+//   }
+// }
 
-ul {
-  &.default {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-}
+// ul {
+//   &.default {
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//   }
+// }
 
 // font family
-.ff-primary {
-  font-family: $ff-primary;
-}
+// .ff-primary {
+//   font-family: $ff-primary;
+// }
 
 // title sizes
 @each $level, $size in $h-sizes {
@@ -286,16 +286,16 @@ ul {
   }
 }
 
-.stretch-up {
-  overflow: hidden;
-  > * {
-    @include min(992) {
-      opacity: 0;
-      display: inline-block;
-      transform: translateY(100%) scaleY(2.5);
-    }
-  }
-}
+// .stretch-up {
+//   overflow: hidden;
+//   > * {
+//     @include min(992) {
+//       opacity: 0;
+//       display: inline-block;
+//       transform: translateY(100%) scaleY(2.5);
+//     }
+//   }
+// }
 
 .fade-up {
   > * {
@@ -305,20 +305,6 @@ ul {
     }
   }
 }
-
-// .text-reveal {
-//   display: block;
-//   @include min(992) {
-//     opacity: 0;
-//     transform: translateY(20px);
-//   }
-//   &.inView {
-//     @include min(992) {
-//       opacity: 1;
-//       transform: translateY(0);
-//     }
-//   }
-// }
 
 .btn-enquiry {
   width: 60px;

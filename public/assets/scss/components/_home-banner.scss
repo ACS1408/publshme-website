@@ -131,17 +131,16 @@
     }
 }
 
-body.rm-bg{
+body.rm-bg {
     background-color: var(--bg-grey);
-    .home-banner{
+    .home-banner {
         @include min(992) {
             + .pin-spacer {
-               background-color: transparent;
-               > section{
                 background-color: transparent;
-               }
+                > section {
+                    background-color: transparent;
+                }
             }
         }
     }
-    
 }
