@@ -18,23 +18,26 @@ const split = splitText();
 
 const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
-const lenis = new Lenis({
-  duration: 1.8,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  direction: "vertical",
-  gestureDirection: "vertical",
-  smooth: true,
-  mouseMultiplier: 1,
-  smoothTouch: false,
-  touchMultiplier: 2,
-  infinite: false,
-});
+if (isDesktop) {
+  const lenis = new Lenis({
+    duration: 1.8,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+  });
 
-function raf(time) {
-  lenis.raf(time);
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
   requestAnimationFrame(raf);
 }
-requestAnimationFrame(raf);
 
 window.onload = () => {
   window.scrollTo(0, 0);
@@ -47,12 +50,12 @@ document.querySelectorAll(".btn-enquiry-popup").forEach((btn) => {
     enquiryModal.toggle();
   });
 });
-enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
-  lenis.stop();
-});
-enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
-  lenis.start();
-});
+// enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
+//   lenis.stop();
+// });
+// enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
+//   lenis.start();
+// });
 
 document
   .querySelectorAll(".enquiry-modal__form input, .enquiry-modal__form textarea")
