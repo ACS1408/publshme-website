@@ -18,8 +18,17 @@ const split = splitText();
 
 const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
+const enquiryModalSelector = document.getElementById("enquiryModal");
+var enquiryModal = new Modal(enquiryModalSelector);
+document.querySelectorAll(".btn-enquiry-popup").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    enquiryModal.toggle();
+  });
+});
+
+let lenis;
 if (isDesktop) {
-  const lenis = new Lenis({
+  lenis = new Lenis({
     duration: 1.8,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     direction: "vertical",
@@ -37,25 +46,20 @@ if (isDesktop) {
   }
 
   requestAnimationFrame(raf);
+
+  enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
+    console.log("stop");
+    lenis?.stop();
+  });
+  enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
+    console.log("start");
+    lenis?.start();
+  });
 }
 
 window.onload = () => {
   window.scrollTo(0, 0);
 };
-
-const enquiryModalSelector = document.getElementById("enquiryModal");
-var enquiryModal = new Modal(enquiryModalSelector);
-document.querySelectorAll(".btn-enquiry-popup").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    enquiryModal.toggle();
-  });
-});
-// enquiryModalSelector.addEventListener("show.bs.modal", function (event) {
-//   lenis.stop();
-// });
-// enquiryModalSelector.addEventListener("hide.bs.modal", function (event) {
-//   lenis.start();
-// });
 
 document
   .querySelectorAll(".enquiry-modal__form input, .enquiry-modal__form textarea")
@@ -108,7 +112,7 @@ if (isDesktop) {
     start: "center top+=30%",
     end: "bottom top",
     onEnter: () => {
-      lenis.scrollTo(".home-video");
+      lenis?.scrollTo(".home-video");
     },
   });
 
@@ -227,7 +231,7 @@ if (isDesktop) {
 
   // }, 400);
 
-  console.log(videoMainWrapper.clientHeight);
+  // console.log(videoMainWrapper.clientHeight);
   aboutWrapper.style.marginTop = `-${videoMainWrapper.clientHeight}px`;
 
   if (homeVideo) {
@@ -351,7 +355,7 @@ if (isDesktop) {
           scrub: true,
           // markers: true,
           onUpdate: (e) => {
-            console.log(e.progress);
+            // console.log(e.progress);
             if (e.progress === 1) {
               document
                 .querySelector(".home-about__title")
