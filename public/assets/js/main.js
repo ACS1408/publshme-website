@@ -196,7 +196,7 @@ if (isDesktop) {
     const trigger = ScrollTrigger.create({
       trigger: ".video-outer-wrap",
       start: `top top`,
-      end: `bottom+=${videoMainWrapper.clientHeight * 2.6}px top`,
+      end: `bottom+=${videoMainWrapper.clientHeight * 5}px top`,
       anticipatePin: 1,
       pin: ".home-video",
       // toggleClass: "section-in",
@@ -230,11 +230,11 @@ if (isDesktop) {
       scrollTrigger: {
         trigger: ".video-outer-wrap",
         start: `top+=${videoMainWrapper.clientHeight * 0.9}px  top`,
-        end: `top+=${videoMainWrapper.clientHeight * 1.5}px top`,
+        end: `top+=${videoMainWrapper.clientHeight * 5}px top`,
         // markers: true,
         scrub: true,
         onUpdate: (e) => {
-          if (e.progress > 0 && e.progress < 1) {
+          if (e.progress > 0 && e.progress < 0.7) {
             document
               .querySelector(".home-video__title")
               .classList.add("inView");
@@ -251,8 +251,8 @@ if (isDesktop) {
     let clip_image_rev = gsap.timeline({
       scrollTrigger: {
         trigger: ".video-outer-wrap",
-        start: `top+=${videoMainWrapper.clientHeight * 1.4}px  top`,
-        end: `top+=${videoMainWrapper.clientHeight * 2}px top`,
+        start: `top+=${videoMainWrapper.clientHeight * 3.5}px  top`,
+        end: `top+=${videoMainWrapper.clientHeight * 4.5}px top`,
         scrub: true,
         // markers: true,
         onEnter: () => {
@@ -272,8 +272,8 @@ if (isDesktop) {
       let clip_image_scale = gsap.timeline({
         scrollTrigger: {
           trigger: ".video-outer-wrap",
-          start: `top+=${videoMainWrapper.clientHeight * 2}px  top`,
-          end: `top+=${videoMainWrapper.clientHeight * 3}px top`,
+          start: `top+=${videoMainWrapper.clientHeight * 4.5}px  top`,
+          end: `top+=${videoMainWrapper.clientHeight * 5.5}px top`,
           scrub: true,
           // markers: true,
         },
