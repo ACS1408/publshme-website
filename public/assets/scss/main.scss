@@ -311,6 +311,7 @@ input:-webkit-autofill:focus ~ button {
   height: 60px;
   border-radius: 50%;
   padding: 0;
+  box-shadow: 0 0 3px 3px #ffffff10 !important;
   @include min(992) {
     width: 80px;
     height: 80px;
@@ -413,6 +414,9 @@ input:-webkit-autofill:focus ~ button {
 body {
   &.modal-open {
     overflow: hidden !important;
+    @include max(991.98) {
+      padding-right: 0 !important;
+    }
     .btn-enquiry {
       background-color: $quinary-color !important;
       border-color: $quinary-color;
@@ -473,6 +477,10 @@ body {
   }
   .modal-body {
     padding: 0;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .modal-dialog {
     @include min(576) {
@@ -492,6 +500,9 @@ body {
         margin-top: 15px;
         margin-bottom: 15px;
       }
+      .modal-content {
+        max-height: unset;
+      }
     }
   }
   &__title {
@@ -508,6 +519,11 @@ body {
   }
   .btn-close {
     display: none;
+  }
+  .form-check {
+    + div {
+      position: relative;
+    }
   }
   &__form {
     input[type="submit"] {
@@ -533,6 +549,9 @@ body {
   position: relative;
   padding-top: size(16);
   height: 60px;
+  &:nth-of-type(5) {
+    margin-top: 30px;
+  }
   .form-label {
     color: $white;
     font-size: size(18);
@@ -597,16 +616,6 @@ body {
     right: 10px;
     transform: translateY(-50%);
   }
-  .form-check {
-    ~ .row {
-      @include max(991.98) {
-        margin: 0;
-        > * {
-          padding: 0;
-        }
-      }
-    }
-  }
 }
 
 .copyrights-mob {
@@ -662,4 +671,23 @@ body {
 }
 .wpcf7-phonetext {
   transform: translateY(-3px);
+}
+
+.wpcf7-form {
+  .wpcf7-response-output {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  &.invalid {
+    .wpcf7-response-output {
+      color: red;
+    }
+  }
+  &.sent {
+    .wpcf7-response-output {
+      color: green;
+    }
+  }
 }

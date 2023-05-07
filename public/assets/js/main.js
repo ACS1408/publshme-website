@@ -112,7 +112,7 @@ if (isDesktop) {
     start: "center top+=30%",
     end: "bottom top",
     onEnter: () => {
-      lenis?.scrollTo(".home-video");
+      lenis?.scrollTo(".home-video__title", { offset: 700 });
     },
   });
 
@@ -175,66 +175,24 @@ if (isDesktop) {
 
   // video section
   const homeVideo = document.getElementById("home-video");
-  const homeVideoPoster = document.querySelector(".home-video__poster");
-  // if (homeVideo) {
-  //   ScrollTrigger.create({
-  //     trigger: ".home-video",
-  //     start: "32% center",
-  //     end: "bottom+=50% top",
-  //     anticipatePin: 1,
-  //     pin: ".home-video",
-  //     toggleClass: "section-in",
-  //     onEnter: () => {
-  //       setTimeout(() => {
-  //         homeVideo.play();
-  //         homeVideoPoster.style.zIndex = -1;
-  //         // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-  //         document.querySelector(".home-video__title").classList.add("inView");
-  //       }, 300);
-  //     },
-  //     onLeave: () => {
-  //       homeVideo.pause();
-  //       homeVideo.currentTime = 0;
-  //       homeVideoPoster.style.zIndex = 2;
-  //       // document.querySelector('.home-video').style.backgroundColor = "#f6f3f6";
-  //       document.querySelector(".home-video__title").classList.remove("inView");
-  //     },
-  //     onEnterBack: () => {
-  //       setTimeout(() => {
-  //         homeVideo.play();
-  //         homeVideoPoster.style.zIndex = -1;
-  //         // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-  //         document.querySelector(".home-video__title").classList.add("inView");
-  //       }, 300);
-  //     },
-  //     onLeaveBack: () => {
-  //       homeVideo.pause();
-  //       homeVideo.currentTime = 0;
-  //       homeVideoPoster.style.zIndex = 2;
-  //       // document.querySelector('.home-video').style.backgroundColor = "#d1f386";
-  //       document.querySelector(".home-video__title").classList.remove("inView");
-  //     },
-  //   });
-  // }
-
-  // #FIXME this is new section js
-  const bannerHeight =
-    document.querySelectorAll(".home-banner")[0].clientHeight;
-  const videoWrapper = document.querySelectorAll(".home-video__frame")[0];
-  const videoMainWrapper = document.querySelectorAll(".video-outer-wrap")[0];
-  const aboutWrapper = document.querySelectorAll(".home-about")[0];
-  const titleMain = document.querySelectorAll(".home-about__title")[0];
-
-  // setTimeout(() => {
-  //   const titleMain = document.querySelectorAll('.home-about__title')[0];
-  //   titleMain.style.cssText += `left:${((window.innerWidth / 2) - (titleMain.clientWidth)) / 2}px; position:fixed;  top:${(window.innerHeight/ 2 - (titleMain.clientHeight / 2))}px;`;
-
-  // }, 400);
-
-  // console.log(videoMainWrapper.clientHeight);
-  aboutWrapper.style.marginTop = `-${videoMainWrapper.clientHeight}px`;
-
   if (homeVideo) {
+    // #FIXME this is new section js
+    const bannerHeight =
+      document.querySelectorAll(".home-banner")[0].clientHeight;
+    const videoWrapper = document.querySelectorAll(".home-video__frame")[0];
+    const videoMainWrapper = document.querySelectorAll(".video-outer-wrap")[0];
+    const aboutWrapper = document.querySelectorAll(".home-about")[0];
+    const titleMain = document.querySelectorAll(".home-about__title")[0];
+
+    // setTimeout(() => {
+    //   const titleMain = document.querySelectorAll('.home-about__title')[0];
+    //   titleMain.style.cssText += `left:${((window.innerWidth / 2) - (titleMain.clientWidth)) / 2}px; position:fixed;  top:${(window.innerHeight/ 2 - (titleMain.clientHeight / 2))}px;`;
+
+    // }, 400);
+
+    // console.log(videoMainWrapper.clientHeight);
+    aboutWrapper.style.marginTop = `-${videoMainWrapper.clientHeight}px`;
+
     const trigger = ScrollTrigger.create({
       trigger: ".video-outer-wrap",
       start: `top top`,
@@ -264,7 +222,7 @@ if (isDesktop) {
     clip_image.fromTo(
       videoWrapper,
       { clipPath: `circle(44vh)` },
-      { clipPath: "circle(110vh)", duration: 1.5 }
+      { clipPath: "circle(120vh)", duration: 1.5 }
     );
     //initial text revealing
 
@@ -376,16 +334,6 @@ if (isDesktop) {
       trigger.refresh();
     }, 1000);
   }
-
-  // about section
-  // const title = document.querySelector(".home-about__title");
-  // const text = title.textContent;
-
-  // const regex = /(WH)(O)( WE ARE)/;
-  // const matches = text.match(regex);
-
-  // const wrappedText = `<span class="terminal-letters left">${matches[1]} </span><span id="pos-o-letter">${matches[2]}</span><span class="terminal-letters right"> ${matches[3]}</span>`;
-  // title.innerHTML = wrappedText;
 
   const aboutTitle = document.querySelector(".home-about__title");
   if (aboutTitle) {
